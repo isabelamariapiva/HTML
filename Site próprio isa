@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="Style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -11,7 +11,7 @@
     
     <header>
         <div class="container" >
-            <h1>Meu Portifólio </h1>
+            <h1>🌸 Meu Portifólio  🌸</h1>
             <nav>
                 <ul>
                     <li><a href= "#sobre">Sobre Mim</a></li> 
@@ -27,7 +27,7 @@
     <div class="container">
         <main>
             <div class="perfil">
-        <img src="isa foto.jpg" alt="Foto de perfil" class="foto">
+        <img src="foto isa.PNG" alt="Foto de perfil" class="foto">
          <div class="info">
          <h2>Isabela Maria 
          <p>16  anos</p>
@@ -37,48 +37,38 @@
                 <h2>Sobre Mim</h2>
                 <p>
                <p>
-          Eu sou a <strong>Isabela Maria, </strong> 
-          <br>Atualmente curso o ensino médio no SESI de Votorantim e,
-          <br>junto com ele, faço o técnico em Análise e Desenvolvimento de Sistemas. 
-          <br>Apesar de reconhecer a importância da tecnologia e do quanto esse aprendizado
-          <br>me acrescenta, sei que meu caminho profissional seguirá em outra direção. 
-          <br>Sou muito grata por cada oportunidade, por cada desafio e pelos professores 
-          <br>que sempre acreditaram em mim essa experiência tem me feito crescer, amadurecer
-          <br> e enxergar novas possibilidades para o futuro. 
+              Sou a <strong>Isabela Maria, </strong> 
+          <br> Atualmente curso o ensino médio no SESI de Votorantim e, junto com ele, faço o técnico em Análise e Desenvolvimento de Sistemas. Apesar de reconhecer a importância da tecnologia e do quanto
+          <br> esse aprendizado me acrescenta, sei que meu caminho profissional seguirá em outra direção. Sou muito grata por cada oportunidade, por cada desafio e pelos professores que sempre acreditaram 
+          <br>em mim essa experiência tem me feito crescer, amadurecer e enxergar novas possibilidades para o futuro. 
           <p>
 
-          <br>Quem me conhece sabe que sou alguém sonhadora e detalhista, que gosta de se 
-          <br>expressar através da moda, da beleza e do cuidado pessoal. Tenho paixão por 
-          <br> me arrumar, por explorar o universo da estética e por tudo o que envolve autoestima e estilo. 
-          <br>É nesse universo que me vejo construindo minha trajetória unindo criatividade, sensibilidade e 
-          <br> autenticidade em algo que realmente me inspira. <br><br>
+               Quem me conhece sabe que sou alguém sonhadora e detalhista, que gosta de se expressar através da moda, da beleza e do cuidado pessoal. Tenho paixão por me arrumar, por explorar o universo 
+            <br>estética e por tudo o que envolve autoestima e estilo. É nesse universo que me vejo construindo minha trajetória unindo criatividade, sensibilidade e autenticidade em algo que realmente me inspira. <br>
 
 </p>
-
                 </p>
             </section>
+        
             <section id="hobbies" class="secao">
                 <h2>Meus Hobbies</h2>
                 <ul>
                 <li><strong>Assistir séries: </strong>
-                    <br>Amo mergulhar em histórias envolventes, conhecer novos personagens e acompanhar 
-                    <br> tramas que me fazem refletir ou simplesmente relaxar.Séries são meu jeito de descansar e,
-                    <br>ao mesmo tempo, me inspirar.
+                    <br>Amo mergulhar em histórias envolventes, conhecer novos personagens e acompanhar tramas que me fazem refletir ou simplesmente relaxar.Séries  são meu jeito de descansar e, ao mesmo tempo,
+                    <br> me inspirar.
                  <li><strong>Passear no shopping: </strong>
-                    <br>para mim, o shopping é mais do que um lugar de compras; é um espaço de lazer, 
-                    <br>de conhecer novidades, experimentar tendências e viver momentos divertidos com quem gosto.
+                    <br>Para mim, o shopping é mais do que um lugar de compras; é um espaço de lazer,  de conhecer novidades, experimentar tendências e viver momentos divertidos com quem gosto.
                  <li><strong> Me arrumar: </strong>
-                  <br> tenho paixão pelo processo de escolher looks, combinar peças, testar maquiagens e cuidar 
-                  <br> da minha aparência. Para mim, se arrumar não é vaidade, mas sim uma forma de expressão e 
-                  <br>de amor-próprio.
+                  <br> Tenho paixão pelo processo de escolher looks, combinar peças, testar maquiagens e cuidar  da minha aparência. Para mim, se arrumar não é vaidade,  sim uma forma de expressão e de amor-próprio.
                 <li><strong> Fazer compras: </strong>
-                 <br>gosto de descobrir coisas novas e encontrar peças que representem meu estilo.
-                 <br> Comprar é também uma forma de renovar minha energia e investir em mim mesma.
+                 <br>Gosto de descobrir coisas novas e encontrar peças que representem meu estilo. Comprar é também uma forma de renovar minha energia e investir em  mesma.
               <p>
-                
+          <img src="eu (2).png" alt="Meus hobbies" class="hobbies-foto">
+
+              </section>
         
             <section id="habilidades" class="secao">
-                <h2>Tabela de habilidades</h2>
+                <h2>✨ Tabela de habilidades ✨</h2>
                 <table>
                     <thead>
                         <tr>
@@ -90,8 +80,8 @@
                     </thead>
                     <body>
                         <tr>
-                            <td>HTML v4</td>
-                            <td>Iniciante</td>
+                            <td>HTML v4 </td>
+                            <td>Iniciante </td>
                             <td>2025</td>
                              <td><a href="https://github.com/isabelamariapiva/HTML.git" target="_blank"> link html</a></td>
                         </tr>
@@ -133,7 +123,8 @@
                     <label for="mensagem">Mensagem:</label>
                     <textarea id="mensagem" id="mensagem" nome="mensagem_usuario" required></textarea>
                 </div>
-                <button type="submit">Enviar</button>
+                <button type="submit" class="button">Enviar</button>
+
             </section>
             
         </main>
@@ -148,13 +139,15 @@
 
 
 
+
+
 Css
 body{
    font-family: Arial, Helvetica, sans-serif;
    background-color: rgb(255, 212, 248) ;
    margin: 0;
    padding:0;
-   color:black (0,0,0);
+   color: black;
    line-height: 1.0;
 }
 .container {
@@ -165,20 +158,31 @@ body{
 
 }
 header{
-    background-color:rgb(225, 199, 250);
+    background: linear-gradient(135deg, #ffc0e0, #d99fff);
     color: rgb(0, 0, 0);
     padding-top: 20px;
     min-height: 70px;
     border-bottom: white 3px solid;
+    box-shadow: 0 4px 10px rgba(235, 14, 169, 0.3);
 }
+
 header h1{
     text-align: center;
     margin: 0;
-    text-transform:uppercase;
     font-size:30px;
     padding-top: 20px;
     min-height: 70px;
+    font-family: 'Playfair Display', serif; 
+    color: #800080; 
+    text-shadow: 0 0 12px pink; 
+    letter-spacing: 1px;
 }
+
+
+header:hover {
+    background: linear-gradient(135deg, #ffc0e0, #d99fff);
+}
+
 nav ul{
     padding: 0;
     list-style: none;
@@ -200,7 +204,7 @@ nav li{
   text-decoration: none;
   font-weight: bold;
 }
-nav a haver{
+nav a:hover{
 color: blueviolet;
 text-decoration: underline ;
 }
@@ -226,11 +230,15 @@ h2{
 
 .foto {
   width: 150px;               
-  height: 150px;
-  border-radius: 50%;         
+  height: 150px;        
   object-fit: cover;          
-  border: 3px solid #fff;     
-  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+
+}
+.foto {
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(45deg, pink, purple, violet);
+  box-shadow: 0 0 15px pink;
 }
 
 .info h2 {
@@ -244,6 +252,20 @@ h2{
   font-size: 18px;
   color: #333;
 }
+.hobbies-foto {
+  display: block;
+  margin: 20px auto;
+ width: 300%;
+ max-width: 900px; 
+  height: auto;
+  border: none; 
+  border-radius: 0;
+  
+  filter: drop-shadow(0 0 15px rgb(218, 95, 167)) drop-shadow(0 0 25px rgb(192, 125, 181));
+ 
+}
+
+
 table{
     width: 100%;
     margin-top: 20px;
@@ -256,37 +278,61 @@ th, td{
     text-align: center;
 }
 thead{
-    background-color:  white;
+    background-color:  rgb(243, 190, 230);
 }
-.formulario{
-    margin-bottom:  20px;
+tbody a {
+  color: #960e6d;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
 }
-.formulario label{
-    display: block;
-    margin-bottom: 5px;
+
+tbody a:hover {
+  color: #d99fff;
+  text-decoration: underline wavy pink;
+  transform: scale(1.1);
 }
-.formulario imput, textarea{
-    width:  100%;
-    border-radius: 5px;
+
+
+.formulario input, 
+.formulario textarea{
+    width: 100%;
+    border-radius: 15px;
     padding: 10px;
+    border: 2px solid #f5cbe3;
+    box-shadow: 0 0 8px rgba(255,182,193,0.5);
+    transition: all 0.3s;
 }
-.button{
-    display :block;
-    width: 50%;
-   border-radius: 3px;
-   background: gray;
-   color: rgb(245, 203, 227);
-   
+
+.formulario input:focus,
+.formulario textarea:focus{
+    border-color: #d99fff;
+    box-shadow: 0 0 12px rgba(211, 153, 255, 0.7);
+    outline: none;
 }
-.button.hover{
-    background-color: pink;
+.button {
+  background: #f5cbe3;
+  border-radius: 25px;
+  box-shadow: 0 0 10px pink;
+  transition: 0.3s;
 }
+.button:hover {
+  background: #e19dd2;
+  box-shadow:  0 0 20px violet;
+  transform: scale(1.5);
+}
+
+
 footer{
-margin-top: 20px;
-padding: 20px;
-background-color:rgb(223, 186, 245);
-color: rgb(15, 2, 2);
-text-align: center;
+    background: linear-gradient(135deg, #ffc0e0, #f4c1f9, #d99fff);
+    color: #4b0082;
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid white;
+    box-shadow: 0 -4px 10px rgba(255,182,193,0.3); /* sombra leve do topo */
+    border-radius: 20px 20px 0 0; /* cantos arredondados do topo do footer */
 }
+
+
 
                      

@@ -39,12 +39,11 @@
                <p>
               Sou a <strong>Isabela Maria, </strong> 
           <br> Atualmente curso o ensino médio no SESI de Votorantim e, junto com ele, faço o técnico em Análise e Desenvolvimento de Sistemas. Apesar de reconhecer a importância da tecnologia e do quanto
-          <br> esse aprendizado me acrescenta, sei que meu caminho profissional seguirá em outra direção. Sou muito grata por cada oportunidade, por cada desafio e pelos professores que sempre acreditaram 
-          <br>em mim essa experiência tem me feito crescer, amadurecer e enxergar novas possibilidades para o futuro. 
+           esse aprendizado me acrescenta, sei que meu caminho profissional seguirá em outra direção. Sou muito grata por cada oportunidade, por cada desafio e pelos professores que sempre acreditaram 
+          em mim essa experiência tem me feito crescer, amadurecer e enxergar novas possibilidades para o futuro. 
           <p>
-
                Quem me conhece sabe que sou alguém sonhadora e detalhista, que gosta de se expressar através da moda, da beleza e do cuidado pessoal. Tenho paixão por me arrumar, por explorar o universo 
-            <br>estética e por tudo o que envolve autoestima e estilo. É nesse universo que me vejo construindo minha trajetória unindo criatividade, sensibilidade e autenticidade em algo que realmente me inspira. <br>
+           estética e por tudo o que envolve autoestima e estilo. É nesse universo que me vejo construindo minha trajetória unindo criatividade, sensibilidade e autenticidade em algo que realmente me inspira. <br>
 
 </p>
                 </p>
@@ -63,7 +62,7 @@
                 <li><strong> Fazer compras: </strong>
                  <br>Gosto de descobrir coisas novas e encontrar peças que representem meu estilo. Comprar é também uma forma de renovar minha energia e investir em  mesma.
               <p>
-          <img src="eu (2).png" alt="Meus hobbies" class="hobbies-foto">
+          <img src="euuuu-Photoroom.png" alt="Meus hobbies" class="hobbies-foto">
 
               </section>
         
@@ -76,6 +75,7 @@
                             <th>Nivel de conhecimento</th>
                             <th>Ano de programação</th>
                             <th> Link Github</th>
+                            <th> Ícones </th>
                         </tr>
                     </thead>
                     <body>
@@ -84,12 +84,15 @@
                             <td>Iniciante </td>
                             <td>2025</td>
                              <td><a href="https://github.com/isabelamariapiva/HTML.git" target="_blank"> link html</a></td>
+                             <td><img src="html-foto.png"></td>
+                             
                         </tr>
                         <tr>
                             <td>JAVA</td>
                             <td>Intermediário</td>
                             <td>2025</td>
                              <td><a href="https://github.com/isabelamariapiva/JAVA.git" target="_blank"> link java</a></td>
+                              <td><img src="java-img.png"></td>
                             
                         </tr>
                         <tr>
@@ -97,6 +100,7 @@
                             <td>Iniciante</td>
                             <td>2025</td>
                             <td><a href="https://github.com/isabelamariapiva/HTML.git" target="_blank"> link css</a></td>
+                             <td><img src="css-img.png"></td>
                         </tr>
                         </tr>
                         <tr>
@@ -134,6 +138,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
@@ -179,9 +184,7 @@ header h1{
 }
 
 
-header:hover {
-    background: linear-gradient(135deg, #ffc0e0, #d99fff);
-}
+
 
 nav ul{
     padding: 0;
@@ -201,6 +204,11 @@ nav li {
 }
 nav li{
   color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a{
+  color: #880e5f;
   text-decoration: none;
   font-weight: bold;
 }
@@ -244,7 +252,7 @@ h2{
 .info h2 {
   margin: 0;
   font-size: 24px;
-  color: #000;
+  color: #000000;
 }
 
 .info p {
@@ -272,6 +280,10 @@ table{
     border-collapse: collapse;
 
 }
+table img{
+  width: 50%;
+  height: 100px;
+}
 th, td{
     padding: 12px;
     border:  1px solid rgb(204, 119, 186);
@@ -281,15 +293,15 @@ thead{
     background-color:  rgb(243, 190, 230);
 }
 tbody a {
-  color: #960e6d;
+  color: #842aa0;
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s;
 }
 
 tbody a:hover {
-  color: #d99fff;
-  text-decoration: underline wavy pink;
+  color: #ff9fe2;
+  text-decoration: underline wavy rgb(140, 32, 155);
   transform: scale(1.1);
 }
 
@@ -329,10 +341,9 @@ footer{
     text-align: center;
     padding: 20px;
     border-top: 3px solid white;
-    box-shadow: 0 -4px 10px rgba(255,182,193,0.3); /* sombra leve do topo */
-    border-radius: 20px 20px 0 0; /* cantos arredondados do topo do footer */
+    box-shadow: 0 -4px 10px rgba(255,182,193,0.3);
+    border-radius: 20px 20px 0 0; 
 }
-
 
 
                      

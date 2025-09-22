@@ -1,0 +1,554 @@
+Index.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dreamy Glow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Dreamy Glow</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <div class="search">
+      <input type="text" placeholder="Buscar...">
+      <span class="sacola">
+  <img src="compras.png" alt="Sacola de compras">
+</span>
+
+    </div>
+  </header>
+
+  <main>
+   
+    <section class="banner">
+       Realce sua beleza, ilumine seu mundo
+    </section>
+
+   <h2>Produtos em Destaque</h2>
+  
+    <div class="produtos">
+      <div class="produto">
+        <img src="1-gloss.png" alt="Gloss">
+        <h4>Gloss</h4>
+        <p>R$ 189,99</p>
+        <a href="gloss.html" target="_blank">
+          <button>Ver mais</button>
+        </a>
+      </div>
+
+      <div class="produto">
+        <img src="blush.png" alt="Blush">
+        <h4>Blush</h4>
+        <p>R$ 270,99</p>
+        <a href="blush.html" target="_blank">
+          <button>Ver mais</button>
+        </a>
+      </div>
+
+      <div class="produto">
+        <img src="perfume.png" alt="Perfume">
+        <h4>Perfume</h4>
+        <p>R$ 199,90</p>
+        <a href="perfume.html" target="_blank">
+          <button>Ver mais</button>
+        </a>
+      </div>
+    </div>
+  </main>
+
+ <footer>
+  <div class="social">
+    <a href="https://www.instagram.com/seuusuario" target="_blank">📸 Instagram</a>
+    <a href="https://wa.me/seunumerodetelefone" target="_blank">💬 WhatsApp</a>
+    <a href="mailto:seuemail@exemplo.com">✉️ Email</a>
+  </div>
+  <p>© 2025 Beauty Store  Todos os direitos reservados</p>
+</footer>
+  
+</body>
+</html>
+
+
+
+
+
+
+Gloss.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gloss - Beauty Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Dreamy glow</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="produto-detalhe">
+      
+  
+      <img id="img-principal" src="gloss.jpeg" alt="Gloss na modelo" class="detalhe-img">
+
+    
+      <div class="miniaturas">
+        <img src="1-gloss.png" data-img="1-gloss.png" alt="Gloss Rosa">
+        <img src="2-gloss.png" data-img="2-gloss.png" alt="Gloss Vermelho">
+        <img src="3-gloss.png" data-img="3-gloss.png" alt="Gloss Nude">
+      </div>
+
+      <h1>Gloss Labial Premium</h1>
+      <p class="preco">R$ 189,99</p>
+      <p class="descricao">
+        Gloss de alta qualidade, hidrata e dá brilho intenso aos lábios.
+        Disponível em cores delicadas e sofisticadas.
+      </p>
+      <ul class="detalhes">
+        <li>Hidratação por 8 horas</li>
+        <li>Brilho intenso</li>
+        <li>Não gruda</li>
+        <li>Testado dermatologicamente</li>
+      </ul>
+      <button class="btn-comprar">Comprar agora</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Beauty Store</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+Blush.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Blush - Beauty Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo"> Dreamy Glow </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="produto-detalhe">
+      <img id="img-principal" src="blush.jpeg" alt="Blush Rosa" class="detalhe-img">
+
+      <div class="miniaturas">
+        <img src="blush.png" data-img="blush.png" alt="Blush Rosa">
+        <img src="blush 2.PNG" data-img="blush 2.png" alt="Blush Rosê">
+        <img src="blush 3.PNG" data-img="blush 3.png" alt="Blush Pink">
+      </div>
+
+      <h1>Blush Premium</h1>
+      <p class="preco">R$ 270,99</p>
+      <p class="descricao">
+        Blush de longa duração, dá um efeito natural e radiante às bochechas.
+        Disponível em diversas tonalidades.
+      </p>
+      <ul class="detalhes">
+        <li>Fácil de aplicar</li>
+        <li>Acabamento suave</li>
+        <li>Hipoalergênico</li>
+      </ul>
+      <button class="btn-comprar">Comprar agora</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Beauty Store</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+perfume.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfume - Beauty Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Dreamy Glow</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="produto-detalhe">
+      <img id="img-principal" src="perfumeprincipal.jpeg" alt="Perfume Clássico" class="detalhe-img">
+
+      <div class="miniaturas">
+        <img src="perfume.png" data-img="perfume.png" alt="Perfume Clássico">
+        <img src="perfume 2.png" data-img="perfume 2.png" alt="Perfume Rosa">
+        <img src="perfume 3.png" data-img="perfume 3.png" alt="Perfume Lavanda">
+      </div>
+
+      <h1>Perfume Premium</h1>
+      <p class="preco">R$ 199,90</p>
+      <p class="descricao">
+        Perfume com fragrância marcante e sofisticada.  
+        Disponível em diversas variações de aroma e cor.
+      </p>
+      <ul class="detalhes">
+        <li>Fixação prolongada</li>
+        <li>Fragrância intensa</li>
+        <li>Embalagem elegante</li>
+      </ul>
+      <button class="btn-comprar">Comprar agora</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Beauty Store</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+Css
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffe6f2;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #ffb6c1;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px solid #ff69b4;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header .logo {
+  color: white; 
+  font-weight: bold;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.8);
+
+}
+nav a {
+  margin: 0 18px;
+  text-decoration: none;
+  color: white; 
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+  text-shadow: 1px 1px 3px rgba(255, 105, 180, 0.8); 
+}
+nav a:hover {
+  color: #7a2f4d;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  padding: 8px 14px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.sacola img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sacola img:hover {
+  transform: scale(1.2);
+}
+
+header .compras:hover {
+  transform: scale(1.2);
+}
+
+.banner {
+  width: 100%;
+  height: 400px; 
+  background-image: url('banner.PNG'); 
+  background-size: cover; 
+  background-position: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; 
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5); 
+}
+
+
+main {
+  padding: 5px;
+  text-align: center;
+}
+
+main h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #c71585;
+}
+
+.produtos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.produto {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: white;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.produto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff99cc;
+}
+
+.produto img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.produto h4,
+.produto p,
+.produto button {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.produto h4 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.produto p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.produto button {
+  margin-top: 8px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 20px;
+  background: #ff69b4;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.produto button:hover {
+  background: #c71585;
+}
+
+/* Página do produto detalhado */
+.produto-detalhe {
+  max-width: 900px;
+  margin: 50px auto;
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+}
+
+.produto-detalhe img.detalhe-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.miniaturas {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.miniaturas img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.miniaturas img:hover {
+  border: 2px solid #ff69b4;
+  transform: scale(1.1);
+}
+
+/* Nome, preço e descrição */
+.produto-detalhe h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #c71585;
+}
+
+.produto-detalhe .preco {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.produto-detalhe .descricao {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.produto-detalhe .detalhes {
+  list-style: disc;
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto 20px auto;
+}
+
+.produto-detalhe .detalhes li {
+  margin-bottom: 5px;
+}
+
+/* Botão comprar */
+.btn-comprar {
+  padding: 10px 20px;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-comprar:hover {
+  background: #c71585;
+}
+footer {
+  width: 100%;
+  margin: 0;
+  padding: 30px 20px;
+  background: #ffb6c1;
+  color: white;
+  text-align: center;
+  border-top: 5px solid #ff69b4;
+}
+
+footer p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+footer .social {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 18px;
+  flex-wrap: wrap;
+}
+
+footer .social a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+footer .social a:hover {
+  color: #7a2f4d;
+}
+
+
+
+
+
+
+Java Script
+Script.js
+
+const miniaturas = document.querySelectorAll('.miniaturas img');
+const imgPrincipal = document.getElementById('img-principal');
+
+miniaturas.forEach(mini => {
+  mini.addEventListener('click', () => {
+    imgPrincipal.src = mini.dataset.img;
+    miniaturas.forEach(m => m.classList.remove('active'));
+    mini.classList.add('active');
+  });
+});

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <h2>Questão 1/5 </h2>
+        <h2 class="l2">Pontos: 0</h2>
+        </div>
+    </header>
+    <div class="caixa">
+        <h3>Quais comandos fazem parte da DDL (Data Definition 
+            <p> Language)?</h3>
+        <div class="resposta">
+            <button class="op1">SELECT, INSERT, UPDATE</button>
+            <button class="op2">GRANT, REVOKE</button>
+            <div class="resposta">
+                <button class="op3">CREATE, ALTER, DROP</button>
+                <button class="op4">SUM, COUNT, AVG</button>
+            </div>
+        
+</body>
+<script src="js/script.js"></script>
+
+</html>
+
+
+
+
+
+
+Css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f7f8f8;
+    flex-direction: column;
+    align-items: center;
+    margin: 100;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #4b1063;
+    color: rgb(0, 0, 0);
+    height: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+header h2 {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 20px;
+    min-height: 70px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    display: inline;
+
+}
+
+.l2 {
+    margin-left: 90%;
+    display: inline;
+}
+
+h3{
+    text-align: center;
+}
+
+
+.op1 {
+    background-color: rgb(245, 66, 66);
+    width: 220px;
+    height: 50px;
+}
+
+.op2 {
+    background-color: rgb(74, 74, 250);
+    width: 220px;
+     height: 50px;
+}
+
+.op3 {
+    background-color: rgb(248, 201, 46);
+    width: 220px;
+     height: 50px;
+}
+
+.op4 {
+    background-color: green;
+    width: 220px;
+     height: 50px;
+     
+}
+
+.caixa {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px;
+    background-color: #ffffff;
+    text-align: center;
+
+}
+
+.resposta button {
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+

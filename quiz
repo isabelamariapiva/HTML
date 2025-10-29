@@ -59,8 +59,8 @@ header {
 
 header h2 {
     text-align: center;
-    font-size: 30px;
-    padding-top: 20px;
+    font-size: 15px;
+    padding-top: 10px;
     min-height: 70px;
     color: #ffffff;
     letter-spacing: 1px;
@@ -71,10 +71,12 @@ header h2 {
 .l2 {
     margin-left: 90%;
     display: inline;
+    
 }
 
 h3{
     text-align: center;
+    
 }
 
 
@@ -125,5 +127,4 @@ h3{
     margin-left: 10px;
     cursor: pointer;
 }
-
 

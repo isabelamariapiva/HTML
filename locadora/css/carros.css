@@ -1,0 +1,192 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ECEDD1;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #F4B8D7;
+    padding: 7px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid #fa8bc2;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-right: -34.5px;
+    width: 100%;
+
+}
+
+.logo img{
+    width: 7%;
+    height: auto;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 100px;
+    border-radius: 50%;
+}
+
+
+nav a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    text-shadow: 0.7px 0.7px 2px rgba(255, 105, 180, 0.8);
+    
+    
+}
+
+nav a:hover {
+    color: #db598d;
+}
+
+
+/*icon*/
+.icon img {
+    width: 45px;
+    height: 45px;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 155px;
+}
+
+
+.icon img:hover {
+    transform: scale(1.2);
+}
+
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .produto {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .produto img {
+            width: 250px;
+        }
+
+        .info h2 {
+            font-size: 27px;
+            margin-bottom: 10px;
+        }
+
+        .preco {
+            font-size: 22px;
+            color: #C2185B;
+            margin: 15px 0;
+              display: flex;
+               margin-top: 100px;
+           
+
+        }
+
+        .btn-agendar  {
+            background: #f0b5de;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            
+        }
+
+        .btn-agendar:hover {
+            background: #db9db5;
+        }
+footer {
+    width: 100%;
+    margin: 0;
+    padding: 30px 20px;
+    background: #F4B8D7;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-top: 5px solid #ff69b4;
+}
+footer{
+     margin-top: 285px;
+    font-size: 100%;
+    transition: 0.3s;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    margin-bottom: -5px;
+    margin-left: -5px;
+}
+a {
+  color: black;          
+  text-decoration: none;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+footer .social a:hover {
+    color: #7a2f4d;
+}
+.info {
+    position: relative;
+}
+
+.miniaturas {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.miniaturas img {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.miniaturas img:hover {
+  border: 2px solid #fa8fc4;
+  transform: scale(1.1);
+}
+
+.btn-indisponivel {
+           background: #b3adb1;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            
+}

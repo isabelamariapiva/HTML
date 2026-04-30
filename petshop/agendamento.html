@@ -1,41 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Agendamento</title>
-
-    <!-- Tailwind -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petshop Reino Animal</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-[#ECEDD1] font-sans text-gray-800">
-
-<!-- HEADER -->
-<header class="bg-[#F4B8D7] px-8 py-3 flex justify-between items-center border-b-4 border-pink-400">
-
-    <img src="imgs/logo.png" class="w-16 rounded-full">
-
-    <nav class="space-x-6 font-semibold">
-        <a href="inicio.html" class="hover:text-pink-600">Home</a>
-        <a href="carro.html" class="hover:text-pink-600">Carros</a>
-        <a href="#" class="hover:text-pink-600">Clientes</a>
-        <a href="agendamento.html" class="hover:text-pink-600">Agendamentos</a>
-    </nav>
-
-    <a href="login.html">
-        <img src="imgs/iconesPess.png" class="w-10 hover:scale-110 transition">
-    </a>
-
-</header>
+<body class="bg-[#ECEDD1] text-gray-800 font-sans min-h-screen flex flex-col">
 
 
-<!-- FORMULÁRIO -->
+    <header class="bg-[#F4B8D7] px-[30px] py-[7px] flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50">
+        
+        <div>
+            <img src="imgs/logo.png" class="w-[70px] rounded-full cursor-pointer">
+        </div>
+<nav class="space-x-6 font-semibold">
+    <a href="index.html" class="hover:text-pink-600 transition">Home</a>
+    <a href="index.html#servicos" class="hover:text-pink-600 transition">Serviços</a>
+    <a href="agendamento.html" class="hover:text-pink-600 transition">Agendamentos</a>
+</nav>
+
+<div class="flex items-center bg-white rounded-full px-3 py-1 shadow-md">
+    <input 
+        type="text" 
+        placeholder="Pesquisar..." 
+        class="outline-none text-sm px-2 w-[120px] md:w-[180px]"
+    >
+    
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         class="w-5 h-5 text-gray-600 cursor-pointer hover:text-pink-500"
+         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+</div>
+
+
+
+    </header>
+
+
+
 <div class="flex justify-center items-center py-12">
 
     <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-lg">
 
         <h2 class="text-2xl font-bold text-center mb-6">
-            Agendamento de Carro
+            Agendamento 
         </h2>
 
         <div class="space-y-4">
@@ -45,10 +57,7 @@
                 <input type="date" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-pink-400 outline-none">
             </div>
 
-            <div>
-                <label class="font-semibold">Data Devolução</label>
-                <input type="date" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-pink-400 outline-none">
-            </div>
+           
 
             <div>
                 <label class="font-semibold">Horário</label>
@@ -61,8 +70,8 @@
             </div>
 
             <div>
-                <label class="font-semibold">Carro</label>
-                <input type="text" placeholder="Digite o carro" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-pink-400 outline-none">
+                <label class="font-semibold">Serviço</label>
+                <input type="text" placeholder="Digite o seviço" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-pink-400 outline-none">
             </div>
 
             <a href="agendado.html">
@@ -77,21 +86,13 @@
 
 </div>
 
-<!-- RESULTADO -->
+
 <p id="resultado" class="text-center font-semibold"></p>
 
 
-<!-- FOOTER -->
-<footer class="bg-[#F4B8D7] text-center py-6 mt-10 border-t-4 border-pink-400">
 
-    <div class="flex justify-center gap-6 mb-3">
-        <a href="#" class="hover:text-pink-700">📸 Instagram</a>
-        <a href="#" class="hover:text-pink-700">💬 WhatsApp</a>
-        <a href="#" class="hover:text-pink-700">✉️ Email</a>
-    </div>
-
-    <p>© 2025 Biblioteca Jardim de Luz - Todos os direitos reservados</p>
-
+<footer class="bg-[#F4B8D7] text-center py-6 border-t-[5px] border-pink-400 mt-auto">
+    <p class="text-sm">© 2026 Petshop Reino Animal • Todos os direitos reservados</p>
 </footer>
 
 </body>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petshop Reino Animal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+
+<body class="bg-[#ECEDD1] text-gray-800 font-sans">
+
+    <header class="bg-[#F4B8D7] px-[30px] py-[7px] flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50">
+        
+        <div>
+            <img src="imgs/logo.png" class="w-[70px] rounded-full cursor-pointer">
+        </div>
+<nav class="space-x-6 font-semibold">
+    <a href="index.html" class="hover:text-pink-600 transition">Home</a>
+  <a href="index.html#servicos" class="hover:text-pink-600 transition">Serviços</a>
+    <a href="agendamento.html" class="hover:text-pink-600 transition">Agendamentos</a>
+</nav>
+
+<div class="flex items-center bg-white rounded-full px-3 py-1 shadow-md">
+    <input 
+        type="text" 
+        placeholder="Pesquisar..." 
+        class="outline-none text-sm px-2 w-[120px] md:w-[180px]"
+    >
+    
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         class="w-5 h-5 text-gray-600 cursor-pointer hover:text-pink-500"
+         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+</div>
+
+
+
+    </header>
+
+<body class="bg-[#ECEDD1] font-sans">
+
+
+<button onclick="abrirMenu()" class="fixed top-5 left-5 bg-pink-300 text-white px-3 py-2 rounded-lg shadow-md z-50">
+  ☰
+</button>
+
+
+<div id="menu" 
+class="fixed top-0 left-[-300px] w-[260px] h-full bg-pink-50 shadow-xl transition-all duration-300 p-6">
+
+<button onclick="fecharMenu()" class="mb-4">✕</button>
+
+<h3 class="font-bold text-lg mb-3 flex justify-between">
+Categorias
+<button onclick="toggleConfig()">⚙️</button>
+</h3>
+
+<div id="configBox" class="hidden mb-3">
+<input id="novaCategoria" placeholder="Nova categoria"
+class="border p-2 w-full mb-2">
+
+<button onclick="adicionarCategoria()"
+class="bg-pink-400 text-white w-full py-2 rounded">
+Adicionar
+</button>
+</div>
+
+<ul id="listaCategorias" class="space-y-2"></ul>
+
+</div>
+
+
+<main class="p-10">
+
+<h2 class="text-2xl font-bold mb-6 text-center">Produtos</h2>
+
+<div id="produtos" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+<div class="produto cachorro bg-white p-4 rounded">Coleira</div>
+<div class="produto cachorro bg-white p-4 rounded">Ração</div>
+<div class="produto gato bg-white p-4 rounded">Areia</div>
+<div class="produto gato bg-white p-4 rounded">Arranhador</div>
+
+</div>
+
+</main>
+
+<script>
+
+
+function abrirMenu() {
+  document.getElementById("menu").style.left = "0";
+}
+
+function fecharMenu() {
+  document.getElementById("menu").style.left = "-300px";
+}
+
+function toggleConfig() {
+  document.getElementById("configBox").classList.toggle("hidden");
+}
+
+
+function filtrar(categoria) {
+  let produtos = document.querySelectorAll(".produto");
+  let encontrou = false;
+
+  produtos.forEach(p => {
+    if (categoria === "todos") {
+      p.style.display = "block";
+      encontrou = true;
+    } else if (p.classList.contains(categoria)) {
+      p.style.display = "block";
+      encontrou = true;
+    } else {
+      p.style.display = "none";
+    }
+  });
+
+  if (!encontrou) {
+    alert("Nenhum produto nessa categoria ainda!");
+  }
+}
+
+
+async function carregarCategorias() {
+
+  try {
+    let res = await fetch("http://localhost:8080/categoria");
+    let dados = await res.json();
+
+    let lista = document.getElementById("listaCategorias");
+    lista.innerHTML = "";
+
+    let liTodos = document.createElement("li");
+    liTodos.innerText = "Todos";
+    liTodos.className = "cursor-pointer";
+    liTodos.onclick = () => filtrar("todos");
+    lista.appendChild(liTodos);
+
+   
+ dados.forEach(cat => {
+
+  let nomeClasse = cat.nome.toLowerCase().trim();
+
+  let li = document.createElement("li");
+  li.className = "flex justify-between items-center cursor-pointer hover:text-pink-500";
+
+  // nome da categoria
+  let span = document.createElement("span");
+  span.innerText = cat.nome;
+  span.onclick = () => filtrar(nomeClasse);
+
+  // botão lixo
+  let btn = document.createElement("button");
+  btn.innerText = "🗑️";
+  btn.className = "text-red-500 hover:scale-110";
+
+  btn.onclick = (e) => {
+    e.stopPropagation(); // NÃO ativar o filtro
+
+    if (confirm("Excluir essa categoria?")) {
+      deletarCategoria(cat.id);
+    }
+  };
+
+  li.appendChild(span);
+  li.appendChild(btn);
+
+  lista.appendChild(li);
+});
+
+  } catch (erro) {
+    console.error("Erro ao carregar categorias:", erro);
+  }
+}
+
+
+async function adicionarCategoria() {
+
+  let input = document.getElementById("novaCategoria");
+  let nome = input.value.trim();
+
+  if (!nome) return;
+
+  try {
+
+    await fetch("http://localhost:8080/categoria", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nome: nome })
+    });
+
+    input.value = "";
+
+
+    carregarCategorias();
+
+  } catch (erro) {
+    console.error("Erro ao salvar:", erro);
+  }
+}
+
+
+carregarCategorias();
+
+</script>
+
+</body>
+</html>
+

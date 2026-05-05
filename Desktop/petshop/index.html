@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petshop Reino Animal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#ECEDD1] text-gray-800 font-sans">
+
+    <header class="bg-[#F4B8D7] px-[30px] py-[7px] flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50">
+        
+        <div>
+            <img src="imgs/logo.png" class="w-[70px] rounded-full cursor-pointer">
+        </div>
+<nav class="space-x-6 font-semibold">
+    <a href="index.html" class="hover:text-pink-600 transition">Home</a>
+    <a href="index.html#servicos" class="hover:text-pink-600 transition">Serviços</a>
+    <a href="agendamento.html" class="hover:text-pink-600 transition">Agendamentos</a>
+</nav>
+
+<div class="flex items-center bg-white rounded-full px-3 py-1 shadow-md">
+    <input 
+        type="text" 
+        placeholder="Pesquisar..." 
+        class="outline-none text-sm px-2 w-[120px] md:w-[180px]"
+    >
+    
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         class="w-5 h-5 text-gray-600 cursor-pointer hover:text-pink-500"
+         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+</div>
+
+
+
+    </header>
+
+
+    <div>
+        <img src="imgs/banner.png" class="w-full object-cover">
+    </div>
+
+
+    <div class="flex justify-center gap-20 mt-10 flex-wrap text-center">
+        
+        <div class="flex items-center gap-3 text-sm">
+            <img src="imgs/estrela.png" class="w-[80px]">
+            <p>Avaliação 5 estrelas</p>
+        </div>
+
+        <div class="flex items-center gap-3 text-sm">
+            <img src="imgs/frete.png" class="w-[80px]">
+            <p>Frete grátis</p>
+        </div>
+
+        <div class="flex items-center gap-3 text-sm">
+            <img src="imgs/cartao.png" class="w-[80px]">
+            <p>Até 3x sem juros</p>
+        </div>
+
+    </div>
+
+    <section class="flex justify-center items-center px-[20px] py-[40px] bg-[#F4B8D7] mt-10 text-center">
+        <div class="max-w-[600px]">
+            <h2 class="text-2xl font-bold mb-3">Sobre nós</h2>
+            <p>
+                Somos um petshop apaixonado por animais e dedicado a oferecer o melhor cuidado
+                para o seu melhor amigo. Aqui, cada pet é tratado com carinho e atenção, como
+                parte da família. Trabalhamos com produtos de qualidade e serviços especializados,
+                sempre pensando no bem-estar e na felicidade dos animais.
+            </p>
+        </div>
+    </section>
+
+
+  <section id="servicos" class="p-10 text-center">
+        <h2 class="text-2xl font-bold mb-6">Serviços oferecidos</h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-[1000px] mx-auto">
+
+            <div class="bg-white rounded-[15px] p-[15px] shadow-md">
+                <img src="imgs/estetica.png" class="w-[80%] h-[150px] object-contain mx-auto">
+                <h3 class="mt-2 font-bold text-lg">Estética e Higiene</h3>
+                <a href="conveniencia1.html" class="block mt-2 p-2 bg-[#ecbae8] text-white rounded-[10px] hover:bg-[#d88cc2] transition">
+                    Ver mais
+                </a>
+            </div>
+
+            <div class="bg-white rounded-[15px] p-[15px] shadow-md">
+                <img src="imgs/clinica.png" class="w-[80%] h-[150px] object-contain mx-auto">
+                <h3 class="mt-2 font-bold text-lg">Saúde e Clínica </h3>
+                <a href="conveniencia2.html" class="block mt-2 p-2 bg-[#ecbae8] text-white rounded-[10px] hover:bg-[#d88cc2] transition">
+                    Ver mais
+                </a>
+            </div>
+
+            <div class="bg-white rounded-[15px] p-[15px] shadow-md">
+                <img src="imgs/bem estar.png" class="w-[80%] h-[150px] object-contain mx-auto">
+                <h3 class="mt-2 font-bold text-lg">Bem-estar e Cuidados</h3>
+                <a href="conveniencia3.html" class="block mt-2 p-2 bg-[#ecbae8] text-white rounded-[10px] hover:bg-[#d88cc2] transition">
+                    Ver mais
+                </a>
+            </div>
+
+            <div class="bg-white rounded-[15px] p-[15px] shadow-md">
+                <img src="imgs/produtos .png" class="w-[80%] h-[150px] object-contain mx-auto">
+                <h3 class="mt-2 font-bold text-lg">Conveniência</h3>
+                <a href="conveniencia4.html" class="block mt-2 p-2 bg-[#ecbae8] text-white rounded-[10px] hover:bg-[#d88cc2] transition">
+                    Ver mais
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+ 
+    <footer class="bg-[#F4B8D7] text-center py-6 border-t-[5px] border-pink-400 mt-5">
+        <p class="text-sm">© 2026 Petshop Reino Animal</p>
+    </footer>
+
+</body>
+</html>

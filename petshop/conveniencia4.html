@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petshop Reino Animal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Petshop Reino Animal</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-[#ECEDD1] text-gray-800 font-sans">
+<body class="bg-[#ECEDD1] font-sans text-gray-800 overflow-x-hidden">
 
-    <header class="bg-[#F4B8D7] px-[30px] py-[7px] flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50">
-        
+  <!-- HEADER -->
+  <header class="bg-[#F4B8D7] border-b-[5px] border-[#fa8bc2] sticky top-0 z-50 shadow-md">
+
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-5">
+
+      <!-- ESQUERDA -->
+      <div class="flex items-center gap-4">
+
+        <!-- MENU -->
+        <button
+          onclick="abrirMenu()"
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Petshop Reino Animal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#ECEDD1] font-sans text-gray-800 min-h-screen flex flex-col overflow-x-hidden">
+
+<!-- HEADER -->
+ <header class="bg-[#F4B8D7] px-[30px] py-[7px] flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50">
+   <button
+        onclick="abrirMenu()"
+        class="bg-pink-400 hover:bg-pink-500 text-white px-4 py-2 rounded-xl shadow transition">
+        ☰
+      </button>
         <div>
             <img src="imgs/logo.png" class="w-[70px] rounded-full cursor-pointer">
         </div>
+        
 <nav class="space-x-6 font-semibold">
     <a href="index.html" class="hover:text-pink-600 transition">Home</a>
-  <a href="index.html#servicos" class="hover:text-pink-600 transition">Serviços</a>
+    <a href="index.html#servicos" class="hover:text-pink-600 transition">Serviços</a>
     <a href="agendamento.html" class="hover:text-pink-600 transition">Agendamentos</a>
 </nav>
 
@@ -39,243 +70,427 @@
 
     </header>
 
-<body class="bg-[#ECEDD1] font-sans">
-
-
-<button onclick="abrirMenu()" class="fixed top-5 left-5 bg-pink-300 text-white px-3 py-2 rounded-lg shadow-md z-50">
-  ☰
-</button>
-
-<div id="menu" class="fixed top-0 left-[-300px] w-[260px] h-full bg-pink-50 shadow-xl transition-all duration-300 z-50 p-6 rounded-r-2xl">
-
-  <button onclick="fecharMenu()" class="text-xl mb-6">✕</button>
-
-  <h3 class="text-xl font-bold mb-6 text-pink-600">Categorias </h3>
-
-  <ul class="space-y-4 font-semibold">
-    <li onclick="filtrar('todos')" class="cursor-pointer hover:text-pink-500"> Todos</li>
-    <li onclick="filtrar('cachorro')" class="cursor-pointer hover:text-pink-500"> Cachorros</li>
-    <li onclick="filtrar('gato')" class="cursor-pointer hover:text-pink-500"> Gatos</li>
-  </ul>
-
-</div>
-
-
-
-<main class="p-10">
-
-  <h2 class="text-3xl font-bold text-center mb-10">Produtos </h2>
-
-  <div id="produtos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-    <!-- cachorro -->
-    <div class="produto cachorro bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/coleira.jpg" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Coleira</h3>
-      <p class="text-pink-500">R$ 49,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
     </div>
 
-    <div class="produto cachorro bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/ração.avif" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Ração Cachorro</h3>
-      <p class="text-pink-500">R$ 89,90</p>
-<a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>    </div>
-   
-      <div class="produto cachorro bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/roupa.webp" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Roupa</h3>
-      <p class="text-pink-500">R$ 49,90</p>
-     <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
+    <!-- CATEGORIAS -->
+    <div
+      id="categoriasHeader"
+      class="bg-pink-100 border-t border-pink-200 px-6 py-3 flex gap-3 overflow-x-auto whitespace-nowrap">
     </div>
 
- <div class="produto cachorro bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/pote.jpg" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Pote cachorro</h3>
-      <p class="text-pink-500">R$ 49,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
+  </header>
+
+  <!-- MENU LATERAL -->
+  <div
+    id="menu"
+    class="fixed top-0 left-[-320px] w-[280px] h-full bg-pink-50 shadow-2xl transition-all duration-300 z-50 p-6 overflow-y-auto">
+
+    <!-- TOPO -->
+    <div class="flex justify-between items-center mb-6">
+
+      <h2 class="text-2xl font-bold">
+        Categorias
+      </h2>
+
+      <button
+        onclick="fecharMenu()"
+        class="text-xl hover:text-red-500 transition">
+
+        ✕
+      </button>
+
     </div>
 
-    <div class="produto cachorro bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/escova.webp" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Escova</h3>
-      <p class="text-pink-500">R$ 89,90</p>
-<a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div>
-        <div class="produto cachorro bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/perfume.jpg" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Perfume</h3>
-      <p class="text-pink-500">R$ 89,90</p>
-<a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-      </div>
+    <!-- CONFIG -->
+    <button
+      onclick="toggleConfig()"
+      class="bg-pink-400 hover:bg-pink-500 text-white px-4 py-3 rounded-xl w-full mb-5 transition">
 
-         <div class="produto cachorro bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/perfume.jpg" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Perfume</h3>
-      <p class="text-pink-500">R$ 89,90</p>
-     <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-      </div>
+      ⚙️ Gerenciar Categorias
+    </button>
 
-      
-         <div class="produto cachorro bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/brinquedocachorro.webp " class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Modedor</h3>
-      <p class="text-pink-500">R$ 89,90</p>
-<a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-      </div>
- <div class="produto cachorro bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/casinha.jpg" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">casinha</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
- <div class="produto cachorro bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/remedio pulgas.webp" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Remedio pulgas</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
+    <!-- BOX -->
+    <div id="configBox" class="hidden mb-6">
 
- <div class="produto cachorro bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/pá.webp" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">pá higienica</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
+      <input
+        id="novaCategoria"
+        type="text"
+        placeholder="Nova categoria"
+        class="border border-pink-200 rounded-xl p-3 w-full mb-3 outline-none"
+      >
 
- <div class="produto cachorro bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/cama cachorro.webp " class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">cama</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
+      <button
+        onclick="adicionarCategoria()"
+        class="bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-xl w-full transition">
 
-    <!-- GATO -->
-    <div class="produto gato bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/areia.jpg" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Areia</h3>
-      <p class="text-pink-500">R$ 39,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
+        Adicionar Categoria
+      </button>
+
     </div>
 
-    <div class="produto gato bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/brinquedo.jpg" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Brinquedo Gato</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div>
-
-     <div class="produto gato bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/Árvore de gato.jpg" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Árvore de gato</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div>
-
-        <div class="produto gato bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/cama.webp " class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Cama</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
-
-        <div class="produto gato bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/comida.jpg" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Comida</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
-
-     
-        <div class="produto gato bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/kit.webp" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">KIt gato</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
-
-      <div class="produto gato bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/toca cama.webp " class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Toca Cama</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
-
-        <div class="produto gato bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/coleira gatos.webp" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Coleira para gatos</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
-
-     
-        <div class="produto gato bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/sampoo.webp" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Shampoo</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
-
-     <div class="produto gato bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/Balsamo.webp" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Bálsamo</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
-
-       <div class="produto gato bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/arranhador.webp" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">arranhador</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
-
-     <div class="produto gato bg-white p-4 rounded-xl shadow-md text-center hover:scale-105 transition">
-      <img src="imgs/roupa gato.jpg" class="h-[150px] mx-auto object-contain">
-      <h3 class="font-bold">Roupa gato</h3>
-      <p class="text-pink-500">R$ 29,90</p>
-      <a href="comprar.html" class="block mt-3 bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600">Comprar</a>
-    </div> 
+    <!-- LISTA -->
+    <ul id="listaCategorias" class="space-y-3"></ul>
 
   </div>
 
-</main>
+  <!-- MAIN -->
+  <main class="max-w-7xl mx-auto px-6 py-10">
 
+    <!-- TOPO -->
+    <div class="flex items-center justify-between mb-8">
 
-<footer class="bg-pink-300 text-center py-6 mt-10">
-  <p>© 2026 Petshop Reino Animal</p>
-</footer>
+      <h1 class="text-4xl font-bold">
+        Produtos
+      </h1>
 
+      <!-- NOVO -->
+      <button
+        onclick="abrirModal()"
+        class="bg-pink-400 hover:bg-pink-500 text-white px-5 py-3 rounded-2xl shadow-lg transition">
 
-<script>
+        + Novo Produto
+      </button>
 
-function abrirMenu() {
-  document.getElementById("menu").style.left = "0";
-}
+    </div>
 
-function fecharMenu() {
-  document.getElementById("menu").style.left = "-300px";
-}
+    <!-- GRID -->
+    <div
+      id="produtos"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-function filtrar(categoria) {
-  let produtos = document.querySelectorAll(".produto");
+      <!-- CARD -->
+      <div
+        onclick="abrirModal()"
+        class="bg-white border-2 border-dashed border-pink-300 rounded-3xl h-[340px] flex flex-col items-center justify-center cursor-pointer hover:scale-105 hover:border-pink-500 transition shadow-md">
 
-  produtos.forEach(produto => {
-    if (categoria === "todos") {
-      produto.style.display = "block";
-    } else {
-      if (produto.classList.contains(categoria)) {
-        produto.style.display = "block";
-      } else {
-        produto.style.display = "none";
-      }
+        <div class="text-7xl text-pink-400">
+          +
+        </div>
+
+        <p class="mt-4 text-pink-500 font-semibold text-lg">
+          Adicionar Produto
+        </p>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- MODAL -->
+  <div
+    id="modal"
+    class="hidden fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4">
+
+    <div class="bg-white rounded-3xl p-7 w-full max-w-[420px] shadow-2xl">
+
+      <h2 class="text-3xl font-bold text-center mb-6">
+        Novo Produto
+      </h2>
+
+      <!-- NOME -->
+      <input
+        id="nomeProduto"
+        type="text"
+        placeholder="Nome do produto"
+        class="border rounded-2xl p-4 w-full mb-4 outline-none"
+      >
+
+      <!-- CATEGORIA -->
+      <input
+        id="categoriaProduto"
+        type="text"
+        placeholder="Categoria"
+        class="border rounded-2xl p-4 w-full mb-4 outline-none"
+      >
+
+      <!-- FOTO -->
+      <input
+        id="fotoProduto"
+        type="file"
+        accept="image/*"
+        class="border rounded-2xl p-3 w-full mb-6"
+      >
+
+      <!-- BOTÕES -->
+      <div class="flex gap-3">
+
+        <button
+          onclick="salvarProduto()"
+          class="flex-1 bg-pink-400 hover:bg-pink-500 text-white py-3 rounded-2xl transition">
+
+          Salvar
+        </button>
+
+        <button
+          onclick="fecharModal()"
+          class="flex-1 bg-gray-200 hover:bg-gray-300 py-3 rounded-2xl transition">
+
+          Cancelar
+        </button>
+
+      </div>
+
+    </div>
+  
+  </div>
+
+  <script>
+
+    // MENU
+    function abrirMenu() {
+      document.getElementById("menu").style.left = "0";
     }
-  });
-}
 
-</script>
+    function fecharMenu() {
+      document.getElementById("menu").style.left = "-320px";
+    }
+
+    function toggleConfig() {
+      document.getElementById("configBox").classList.toggle("hidden");
+    }
+
+    // MODAL
+    function abrirModal() {
+      document.getElementById("modal").classList.remove("hidden");
+    }
+
+    function fecharModal() {
+      document.getElementById("modal").classList.add("hidden");
+    }
+
+    // SALVAR PRODUTO
+    function salvarProduto() {
+
+      let nome = document.getElementById("nomeProduto").value;
+      let categoria = document.getElementById("categoriaProduto").value;
+      let foto = document.getElementById("fotoProduto").files[0];
+
+      if (!nome || !categoria || !foto) {
+        alert("Preencha todos os campos!");
+        return;
+      }
+
+      let leitor = new FileReader();
+
+      leitor.onload = function(e) {
+
+        let imagem = e.target.result;
+
+        let produtos = document.getElementById("produtos");
+
+        let card = document.createElement("div");
+
+        card.className =
+          `produto ${categoria.toLowerCase()}
+          bg-white rounded-3xl overflow-hidden
+          shadow-lg hover:scale-105 transition`;
+
+        card.innerHTML = `
+
+          <!-- FOTO -->
+          <img
+            src="${imagem}"
+            class="w-full h-[220px] object-cover"
+          >
+
+          <!-- TEXOS -->
+          <div class="p-5">
+
+            <h3 class="font-bold text-xl mb-1">
+              ${nome}
+            </h3>
+
+            <p class="text-gray-500 mb-5">
+              ${categoria}
+            </p>
+
+            <!-- BOTÃO -->
+            <button
+              onclick="abrirDescricao(
+                '${nome}',
+                '${categoria}',
+                '${imagem}'
+              )"
+
+              class="w-full bg-pink-400 hover:bg-pink-500 text-white py-3 rounded-2xl transition">
+
+              Ver Produto
+            </button>
+
+          </div>
+        `;
+
+        produtos.appendChild(card);
+
+        // LIMPAR
+        document.getElementById("nomeProduto").value = "";
+        document.getElementById("categoriaProduto").value = "";
+        document.getElementById("fotoProduto").value = "";
+
+        fecharModal();
+      }
+
+      leitor.readAsDataURL(foto);
+    }
+
+    // ABRIR PÁGINA
+    function abrirDescricao(nome, categoria, imagem) {
+
+      localStorage.setItem("produtoNome", nome);
+      localStorage.setItem("produtoCategoria", categoria);
+      localStorage.setItem("produtoImagem", imagem);
+
+      window.location.href = "produto.html";
+    }
+
+    // FILTRAR
+    function filtrar(categoria) {
+
+      let produtos = document.querySelectorAll(".produto");
+
+      produtos.forEach(produto => {
+
+        if (categoria === "todos") {
+
+          produto.style.display = "block";
+
+        } else {
+
+          if (produto.classList.contains(categoria.toLowerCase())) {
+            produto.style.display = "block";
+          } else {
+            produto.style.display = "none";
+          }
+
+        }
+
+      });
+
+    }
+
+    // CARREGAR CATEGORIAS
+    async function carregarCategorias() {
+
+      try {
+
+        let res = await fetch("http://localhost:8080/categoria");
+        let dados = await res.json();
+
+        let lista = document.getElementById("listaCategorias");
+        let header = document.getElementById("categoriasHeader");
+
+        lista.innerHTML = "";
+        header.innerHTML = "";
+
+        // TODOS
+        let btnTodos = document.createElement("button");
+
+        btnTodos.innerText = "Todos";
+
+        btnTodos.className =
+          "bg-white hover:bg-pink-400 hover:text-white px-5 py-2 rounded-full shadow transition";
+
+        btnTodos.onclick = () => filtrar("todos");
+
+        header.appendChild(btnTodos);
+
+        // MENU TODOS
+        let liTodos = document.createElement("li");
+
+        liTodos.innerText = "Todos";
+
+        liTodos.className =
+          "cursor-pointer hover:text-pink-500 font-medium";
+
+        liTodos.onclick = () => filtrar("todos");
+
+        lista.appendChild(liTodos);
+
+        // CATEGORIAS
+        dados.forEach(cat => {
+
+          let nomeClasse = cat.nome.toLowerCase().trim();
+
+          // HEADER
+          let btn = document.createElement("button");
+
+          btn.innerText = cat.nome;
+
+          btn.className =
+            "bg-white hover:bg-pink-400 hover:text-white px-5 py-2 rounded-full shadow transition";
+
+          btn.onclick = () => filtrar(nomeClasse);
+
+          header.appendChild(btn);
+
+          // MENU
+          let li = document.createElement("li");
+
+          li.className =
+            "flex justify-between items-center bg-white p-3 rounded-xl shadow";
+
+          let span = document.createElement("span");
+
+          span.innerText = cat.nome;
+
+          span.className =
+            "cursor-pointer hover:text-pink-500";
+
+          span.onclick = () => filtrar(nomeClasse);
+
+          li.appendChild(span);
+
+          lista.appendChild(li);
+
+        });
+
+      } catch (erro) {
+
+        console.log("Erro:", erro);
+      }
+
+    }
+
+    // ADICIONAR CATEGORIA
+    async function adicionarCategoria() {
+
+      let input = document.getElementById("novaCategoria");
+
+      let nome = input.value.trim();
+
+      if (!nome) return;
+
+      try {
+
+        await fetch("http://localhost:8080/categoria", {
+
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json"
+          },
+
+          body: JSON.stringify({
+            nome: nome
+          })
+
+        });
+
+        input.value = "";
+
+        carregarCategorias();
+
+      } catch (erro) {
+
+        console.log("Erro:", erro);
+      }
+
+    }
+
+    carregarCategorias();
+
+  </script>
 
 </body>
 </html>
-
-

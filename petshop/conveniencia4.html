@@ -144,12 +144,13 @@
       <h2 class="text-3xl font-bold text-center mb-6">
         Novo Produto
       </h2>
+
       <!-- PREÇO -->
-<input id="precoProduto"
-  type="number"
-  step="0.01"
-  placeholder="Preço do produto"
-  class="border rounded-2xl p-4 w-full mb-4 outline-none">
+      <input id="precoProduto"
+        type="number"
+        step="0.01"
+        placeholder="Preço do produto"
+        class="border rounded-2xl p-4 w-full mb-4 outline-none">
 
       <!-- NOME -->
       <input id="nomeProduto"
@@ -157,8 +158,11 @@
         placeholder="Nome do produto"
         class="border rounded-2xl p-4 w-full mb-4 outline-none">
 
-          
-        
+      <!-- DESCRIÇÃO -->
+      <textarea id="descricaoProduto"
+        placeholder="Descrição do produto"
+        class="border rounded-2xl p-4 w-full mb-4 outline-none h-[120px] resize-none"></textarea>
+
       <!-- CATEGORIA -->
       <select id="categoriaProduto"
         class="border rounded-2xl p-4 w-full mb-4 outline-none">
@@ -256,11 +260,13 @@
     }
 
     // ABRIR PRODUTO
-    function abrirProduto(nome, categoria, imagem) {
+    function abrirProduto(nome, categoria, imagem, preco, descricao) {
 
       localStorage.setItem("produtoNome", nome);
       localStorage.setItem("produtoCategoria", categoria);
       localStorage.setItem("produtoImagem", imagem);
+      localStorage.setItem("produtoPreco", preco);
+      localStorage.setItem("produtoDescricao", descricao);
 
       window.location.href = "produto.html";
     }
@@ -314,20 +320,28 @@
             ${produto.nome}
           </h3>
 
-          <p class="text-gray-500 mb-5">
+          <p class="text-gray-500 mb-3">
             ${produto.categoria.replace("-", " ")}
           </p>
+
           <p class="text-pink-600 font-bold mb-3">
-  R$ ${produto.preco}
-</p>
+            R$ ${produto.preco}
+          </p>
+
+          <!-- DESCRIÇÃO -->
+          <p class="text-gray-600 text-sm mb-5">
+            ${produto.descricao}
+          </p>
 
           <!-- BOTÃO -->
           <button
-            onclick="abrirProduto(
-              '${produto.nome}',
-              '${produto.categoria}',
-              '${produto.imagem}'
-            )"
+         onclick="abrirProduto(
+  '${produto.nome}',
+  '${produto.categoria}',
+  '${produto.imagem}',
+  '${produto.preco}',
+  '${produto.descricao}'
+)"
             class="w-full bg-pink-400 hover:bg-pink-500 text-white py-3 rounded-2xl transition">
 
             Comprar
@@ -338,7 +352,6 @@
 
       produtosDiv.appendChild(card);
     }
-    
 
     // RENDERIZAR
     function renderizarProdutos() {
@@ -373,45 +386,48 @@
     // SALVAR PRODUTO
     function salvarProduto() {
 
-  let nome = document.getElementById("nomeProduto").value;
-  let categoria = document.getElementById("categoriaProduto").value;
-  let foto = document.getElementById("fotoProduto").files[0];
-  let preco = document.getElementById("precoProduto").value;
+      let nome = document.getElementById("nomeProduto").value;
+      let categoria = document.getElementById("categoriaProduto").value;
+      let foto = document.getElementById("fotoProduto").files[0];
+      let preco = document.getElementById("precoProduto").value;
+      let descricao = document.getElementById("descricaoProduto").value;
 
-  if (!nome || !categoria || !foto || !preco) {
-    alert("Preencha todos os campos!");
-    return;
-  }
+      if (!nome || !categoria || !foto || !preco || !descricao) {
+        alert("Preencha todos os campos!");
+        return;
+      }
 
-  let leitor = new FileReader();
+      let leitor = new FileReader();
 
-  leitor.onload = function (e) {
+      leitor.onload = function (e) {
 
-    let produto = {
-      nome: nome,
-      categoria: categoria,
-      imagem: e.target.result,
-      preco: Number(preco) // 🔥 GARANTE QUE É NÚMERO
-    };
+        let produto = {
+          nome: nome,
+          categoria: categoria,
+          imagem: e.target.result,
+          preco: Number(preco),
+          descricao: descricao
+        };
 
-    let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-    produtos.push(produto);
+        let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
 
-    localStorage.setItem("produtos", JSON.stringify(produtos));
+        produtos.push(produto);
 
-    renderizarProdutos();
+        localStorage.setItem("produtos", JSON.stringify(produtos));
 
-    document.getElementById("nomeProduto").value = "";
-    document.getElementById("categoriaProduto").value = "";
-    document.getElementById("fotoProduto").value = "";
-    document.getElementById("precoProduto").value = "";
+        renderizarProdutos();
 
-    fecharModal();
-  };
+        document.getElementById("nomeProduto").value = "";
+        document.getElementById("categoriaProduto").value = "";
+        document.getElementById("fotoProduto").value = "";
+        document.getElementById("precoProduto").value = "";
+        document.getElementById("descricaoProduto").value = "";
 
-  leitor.readAsDataURL(foto);
-}
-    
+        fecharModal();
+      };
+
+      leitor.readAsDataURL(foto);
+    }
 
     // CATEGORIAS
     async function carregarCategorias() {

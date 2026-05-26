@@ -1,114 +1,304 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petshop Reino Animal</title>
+    <title>Produto • Reino Animal</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-[#ECEDD1] text-gray-800 font-sans min-h-screen flex flex-col">
 
- <header class="bg-[#F4B8D7] px-[30px] py-[7px] flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50">
-        
+    <!-- HEADER -->
+    <header class="bg-[#F4B8D7] px-[30px] py-[7px] flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50">
+
+        <!-- LOGO -->
         <div>
-            <img src="imgs/logo.png" class="w-[70px] rounded-full cursor-pointer">
+            <img src="imgs/logo.png"
+                class="w-[70px] rounded-full cursor-pointer">
         </div>
-<nav class="space-x-6 font-semibold">
-    <a href="index.html" class="hover:text-pink-600 transition">Home</a>
-     <a href="index.html#servicos" class="hover:text-pink-600 transition">Serviços</a>
-    <a href="agendamento.html" class="hover:text-pink-600 transition">Agendamentos</a>
-</nav>
 
-<div class="flex items-center bg-white rounded-full px-3 py-1 shadow-md">
-    <input 
-        type="text" 
-        placeholder="Pesquisar..." 
-        class="outline-none text-sm px-2 w-[120px] md:w-[180px]"
-    >
-    
-    <svg xmlns="http://www.w3.org/2000/svg" 
-         class="w-5 h-5 text-gray-600 cursor-pointer hover:text-pink-500"
-         fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-              d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
-    </svg>
-</div>
+        <!-- MENU -->
+        <nav class="space-x-6 font-semibold hidden md:block">
 
+            <a href="index.html"
+                class="hover:text-pink-600 transition">
+                Home
+            </a>
 
+            <a href="index.html#servicos"
+                class="hover:text-pink-600 transition">
+                Serviços
+            </a>
+
+            <a href="agendamento.html"
+                class="hover:text-pink-600 transition">
+                Agendamentos
+            </a>
+
+        </nav>
+
+        <!-- DIREITA -->
+        <div class="flex items-center gap-4">
+
+            <!-- PESQUISA -->
+            <div class="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
+
+                <input type="text"
+                    placeholder="Pesquisar..."
+                    class="outline-none text-sm px-2 w-[120px] md:w-[180px]">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5 text-gray-600 cursor-pointer hover:text-pink-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
+
+                </svg>
+
+            </div>
+
+            <!-- CARRINHO -->
+            <a href="compra.html"
+                class="bg-white p-3 rounded-full shadow-md hover:bg-pink-100 transition relative">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 text-pink-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.293 1.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+
+                </svg>
+
+                <span class="absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">
+                    0
+                </span>
+
+            </a>
+
+        </div>
 
     </header>
 
+    <!-- MAIN -->
+    <main class="flex justify-center items-center px-4 py-12 flex-grow">
 
-  <!-- CONTEÚDO -->
-  <main class="max-w-5xl mx-auto p-8">
+        <div class="bg-[#FFFDFB] shadow-[0_10px_40px_rgba(0,0,0,0.08)] rounded-[35px] max-w-6xl w-full p-8 md:p-12 flex flex-col lg:flex-row gap-12 border border-pink-100">
 
-    <div class="bg-white rounded-3xl shadow-xl overflow-hidden grid md:grid-cols-2">
+            <!-- IMAGENS -->
+            <div class="flex flex-col items-center flex-1">
 
-      <!-- FOTO -->
-      <div>
+                <!-- IMAGEM PRINCIPAL -->
+                <div class="bg-[#FAFAFA] rounded-[30px] p-8 w-full flex justify-center items-center shadow-inner">
 
-        <img
-          id="imagemProduto"
-          class="w-full h-full object-cover"
-        >
+                    <img id="imagemPrincipal"
+                        class="w-full max-w-[380px] h-[380px] object-contain hover:scale-105 transition duration-300">
 
-      </div>
+                </div>
 
-      <!-- INFOS -->
-      <div class="p-8 flex flex-col justify-center">
+                <!-- MINIATURAS -->
+                <div class="flex gap-4 mt-6">
 
-        <p class="text-pink-500 font-semibold mb-2">
-          Produto
+                    <img id="mini1"
+                        onclick="trocarImagem(this.src)"
+                        class="w-20 h-20 object-cover rounded-2xl cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-300 shadow-sm">
+
+                    <img id="mini2"
+                        onclick="trocarImagem(this.src)"
+                        class="w-20 h-20 object-cover rounded-2xl cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-300 shadow-sm">
+
+                    <img id="mini3"
+                        onclick="trocarImagem(this.src)"
+                        class="w-20 h-20 object-cover rounded-2xl cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-300 shadow-sm">
+
+                </div>
+
+            </div>
+
+            <!-- INFO -->
+            <div class="flex-1 flex flex-col justify-center">
+
+                <!-- CATEGORIA -->
+                <p id="produtoCategoria"
+                    class="uppercase tracking-[4px] text-pink-400 font-bold text-sm mb-3">
+                </p>
+
+                <!-- NOME -->
+                <h1 id="produtoNome"
+                    class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-5">
+                </h1>
+
+                <!-- AVALIAÇÃO -->
+                <div class="flex items-center gap-2 mb-6">
+
+                    <div class="text-yellow-400 text-lg">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <span class="text-gray-400 text-sm">
+                        (4.9 avaliações)
+                    </span>
+
+                </div>
+
+                <!-- PREÇO -->
+                <div class="mb-8">
+
+                    <p id="produtoPreco"
+                        class="text-5xl font-bold text-pink-500">
+                    </p>
+
+                    <p class="text-sm text-gray-400 mt-2">
+                        ou em até 6x sem juros 💳
+                    </p>
+
+                </div>
+
+                <!-- DESCRIÇÃO -->
+                <div class="bg-[#FFF7FA] border border-pink-100 rounded-[25px] p-6 mb-8">
+
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                        Sobre o produto
+                    </h2>
+
+                    <p id="produtoDescricao"
+                        class="text-gray-600 leading-relaxed text-[15px]">
+                    </p>
+
+                </div>
+
+                <!-- BENEFÍCIOS -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+
+                    <div class="bg-white border border-pink-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
+                        🚚 Entrega rápida
+                    </div>
+
+                    <div class="bg-white border border-pink-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
+                        💖 Produto premium
+                    </div>
+
+                    <div class="bg-white border border-pink-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
+                        🐾 Qualidade garantida
+                    </div>
+
+                    <div class="bg-white border border-pink-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
+                        💳 Parcelamento disponível
+                    </div>
+
+                </div>
+
+                <!-- BOTÕES -->
+                <div class="flex flex-wrap gap-4">
+
+                    <!-- COMPRAR -->
+                    <button onclick="comprarProduto()"
+                        class="bg-pink-400 hover:bg-pink-500 text-white px-10 py-4 rounded-2xl text-lg font-semibold shadow-lg hover:shadow-xl transition">
+
+                        Comprar Agora
+
+                    </button>
+
+                    <!-- VOLTAR -->
+                    <a href="index.html"
+                        class="bg-white border border-pink-200 hover:bg-pink-50 text-pink-500 px-8 py-4 rounded-2xl text-lg font-semibold transition">
+
+                        Voltar
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#F4B8D7] text-center py-6 border-t-[5px] border-pink-400 mt-auto">
+
+        <p class="text-sm">
+            © 2026 Petshop Reino Animal • Todos os direitos reservados
         </p>
 
-        <h1
-          id="nomeProduto"
-          class="text-4xl font-bold mb-4">
-        </h1>
+    </footer>
 
-        <p
-          id="categoriaProduto"
-          class="text-gray-500 text-lg mb-6">
-        </p>
+    <script>
 
-        <p class="text-gray-700 leading-relaxed mb-8">
+        // PEGAR DADOS
+        let nome = localStorage.getItem("produtoNome");
+        let categoria = localStorage.getItem("produtoCategoria");
+        let imagem = localStorage.getItem("produtoImagem");
+        let preco = localStorage.getItem("produtoPreco");
+        let descricao = localStorage.getItem("produtoDescricao");
 
-          Produto premium para o seu pet ❤️
-          Feito com muito carinho e qualidade
-          para garantir conforto, diversão e bem-estar.
+        // MOSTRAR
+        document.getElementById("produtoNome").innerText = nome;
 
-        </p>
+        document.getElementById("produtoCategoria").innerText =
+            categoria;
 
-        <button
-          class="bg-pink-400 hover:bg-pink-500 text-white py-4 rounded-2xl text-lg transition">
+        document.getElementById("imagemPrincipal").src =
+            imagem;
 
-          Comprar Agora
-        </button>
+        document.getElementById("mini1").src =
+            imagem;
 
-      </div>
+        document.getElementById("mini2").src =
+            imagem;
 
-    </div>
+        document.getElementById("mini3").src =
+            imagem;
 
-  </main>
+        document.getElementById("produtoPreco").innerText =
+            "R$ " + Number(preco).toFixed(2).replace(".", ",");
 
-  <script>
+        document.getElementById("produtoDescricao").innerText =
+            descricao;
 
-    // PEGAR DADOS
-    let nome = localStorage.getItem("produtoNome");
-    let categoria = localStorage.getItem("produtoCategoria");
-    let imagem = localStorage.getItem("produtoImagem");
+        // TROCAR IMAGEM
+        function trocarImagem(novaImagem){
 
-    // MOSTRAR
-    document.getElementById("nomeProduto").innerText = nome;
-    document.getElementById("categoriaProduto").innerText = categoria;
-    document.getElementById("imagemProduto").src = imagem;
+            document.getElementById("imagemPrincipal").src =
+                novaImagem;
+        }
 
-  </script>
+        // COMPRAR
+        function comprarProduto(){
+
+            let carrinho =
+                JSON.parse(localStorage.getItem("carrinho")) || [];
+
+            carrinho.push({
+                nome: nome,
+                categoria: categoria,
+                imagem: imagem,
+                preco: Number(preco),
+                quantidade: 1
+            });
+
+            localStorage.setItem(
+                "carrinho",
+                JSON.stringify(carrinho)
+            );
+
+            window.location.href = "compra.html";
+        }
+
+    </script>
 
 </body>
 </html>
-
-<footer class="bg-[#F4B8D7] text-center py-6 border-t-[5px] border-pink-400 mt-auto">
-    <p class="text-sm">© 2026 Petshop Reino Animal • Todos os direitos reservados</p>
-</footer>

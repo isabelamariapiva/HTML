@@ -4,301 +4,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto • Reino Animal</title>
+    <title>Produto • Petshop Reino Animal</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Estilo minimalista e profissional */
+        .btn-minimal {
+            transition: all 0.2s ease;
+        }
+        .btn-minimal:hover {
+            transform: translateY(-1px);
+        }
+        
+        .thumb-minimal {
+            transition: all 0.2s ease;
+            border: 1.5px solid transparent;
+        }
+        .thumb-minimal:hover {
+            border-color: #f9a8d4;
+            transform: scale(1.03);
+        }
+        
+        .benefit-minimal {
+            transition: all 0.2s ease;
+        }
+        .benefit-minimal:hover {
+            background-color: #fef2f6;
+            border-color: #f9a8d4;
+        }
+        
+        .divider-light {
+            background: linear-gradient(90deg, #fce7f3, #f9a8d4, #fce7f3);
+            height: 1px;
+        }
+        
+        /* Scrollbar suave */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fce7f3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f9a8d4;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
-<body class="bg-[#ECEDD1] text-gray-800 font-sans min-h-screen flex flex-col">
+<body class="bg-[#ECEDD1] text-gray-700 font-sans min-h-screen flex flex-col">
 
-    <!-- HEADER -->
-    <header class="bg-[#F4B8D7] px-[30px] py-[7px] flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50">
+    <!-- HEADER MINIMALISTA ROSA -->
+    <header class="bg-[#F4B8D7] px-6 md:px-8 py-3 flex justify-between items-center border-b border-[#fa8bc2] sticky top-0 z-50 shadow-sm">
 
         <!-- LOGO -->
-        <div>
-            <img src="imgs/logo.png"
-                class="w-[70px] rounded-full cursor-pointer">
+        <div class="transition-transform duration-200 hover:scale-105">
+            <img src="imgs/logo.png" class="w-[65px] rounded-full">
         </div>
 
         <!-- MENU -->
-        <nav class="space-x-6 font-semibold hidden md:block">
-
-            <a href="index.html"
-                class="hover:text-pink-600 transition">
-                Home
-            </a>
-
-            <a href="index.html#servicos"
-                class="hover:text-pink-600 transition">
-                Serviços
-            </a>
-
-            <a href="agendamento.html"
-                class="hover:text-pink-600 transition">
-                Agendamentos
-            </a>
-
+        <nav class="space-x-7 font-medium hidden md:flex text-gray-700">
+            <a href="index.html" class="hover:text-pink-700 transition">Home</a>
+            <a href="index.html#servicos" class="hover:text-pink-700 transition">Serviços</a>
+            <a href="agendamento.html" class="hover:text-pink-700 transition">Agendamentos</a>
+            <a href="produtos.html" class="text-pink-700 transition">Produtos</a>
         </nav>
 
         <!-- DIREITA -->
-        <div class="flex items-center gap-4">
-
+        <div class="flex items-center gap-3">
             <!-- PESQUISA -->
-            <div class="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
-
-                <input type="text"
-                    placeholder="Pesquisar..."
-                    class="outline-none text-sm px-2 w-[120px] md:w-[180px]">
-
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    class="w-5 h-5 text-gray-600 cursor-pointer hover:text-pink-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
-
-                </svg>
-
+            <div class="flex items-center bg-white/90 rounded-full px-3 py-1.5 shadow-sm border border-pink-200">
+                <input type="text" placeholder="Buscar" class="outline-none text-sm px-2 w-[100px] md:w-[150px] bg-transparent">
+                <i class="fas fa-search text-gray-500 hover:text-pink-500 cursor-pointer text-sm"></i>
             </div>
 
             <!-- CARRINHO -->
-            <a href="compra.html"
-                class="bg-white p-3 rounded-full shadow-md hover:bg-pink-100 transition relative">
-
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    class="w-6 h-6 text-pink-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.293 1.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-
-                </svg>
-
-                <span class="absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">
-                    0
-                </span>
-
+            <a href="compra.html" class="relative bg-white/90 p-2.5 rounded-full shadow-sm hover:bg-pink-100 transition border border-pink-200">
+                <i class="fas fa-shopping-bag text-pink-500 text-lg"></i>
+                <span id="carrinhoBadge" class="absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">0</span>
             </a>
 
+            <!-- PERFIL -->
+            <a href="login.html" class="bg-white/90 p-1 rounded-full shadow-sm hover:scale-105 transition border border-pink-200">
+                <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Perfil" class="w-8 h-8 rounded-full">
+            </a>
         </div>
-
     </header>
 
     <!-- MAIN -->
-    <main class="flex justify-center items-center px-4 py-12 flex-grow">
-
-        <div class="bg-[#FFFDFB] shadow-[0_10px_40px_rgba(0,0,0,0.08)] rounded-[35px] max-w-6xl w-full p-8 md:p-12 flex flex-col lg:flex-row gap-12 border border-pink-100">
-
-            <!-- IMAGENS -->
-            <div class="flex flex-col items-center flex-1">
-
-                <!-- IMAGEM PRINCIPAL -->
-                <div class="bg-[#FAFAFA] rounded-[30px] p-8 w-full flex justify-center items-center shadow-inner">
-
-                    <img id="imagemPrincipal"
-                        class="w-full max-w-[380px] h-[380px] object-contain hover:scale-105 transition duration-300">
-
-                </div>
-
-                <!-- MINIATURAS -->
-                <div class="flex gap-4 mt-6">
-
-                    <img id="mini1"
-                        onclick="trocarImagem(this.src)"
-                        class="w-20 h-20 object-cover rounded-2xl cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-300 shadow-sm">
-
-                    <img id="mini2"
-                        onclick="trocarImagem(this.src)"
-                        class="w-20 h-20 object-cover rounded-2xl cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-300 shadow-sm">
-
-                    <img id="mini3"
-                        onclick="trocarImagem(this.src)"
-                        class="w-20 h-20 object-cover rounded-2xl cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-300 shadow-sm">
-
-                </div>
-
+    <main class="flex justify-center items-center px-4 py-10 md:py-14 flex-grow">
+        <div class="max-w-5xl w-full">
+            <!-- Breadcrumb simples -->
+            <div class="mb-5 text-xs text-gray-400 flex items-center gap-2">
+                <a href="index.html" class="hover:text-pink-500">Home</a>
+                <i class="fas fa-chevron-right text-[10px]"></i>
+                <a href="produtos.html" class="hover:text-pink-500">Produtos</a>
+                <i class="fas fa-chevron-right text-[10px]"></i>
+                <span id="breadcrumbCategoria" class="text-pink-500">Produto</span>
             </div>
 
-            <!-- INFO -->
-            <div class="flex-1 flex flex-col justify-center">
+            <!-- CARD PRINCIPAL - MINIMALISTA E ELEGANTE -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-pink-100">
+                <div class="flex flex-col lg:flex-row gap-6 p-6 md:p-8">
+                    
+                    <!-- LADO ESQUERDO: IMAGEM -->
+                    <div class="lg:w-5/12">
+                        <div class="bg-pink-50/30 rounded-xl p-6 flex justify-center items-center">
+                            <img id="imagemPrincipal" class="w-full max-w-[320px] h-[300px] object-contain transition duration-300" alt="Produto">
+                        </div>
+                        
+                        <!-- Miniaturas -->
+                        <div class="flex gap-3 justify-center mt-4">
+                            <img id="mini1" onclick="trocarImagem(this.src)" class="thumb-minimal w-16 h-16 object-cover rounded-lg cursor-pointer shadow-sm border border-pink-100">
+                            <img id="mini2" onclick="trocarImagem(this.src)" class="thumb-minimal w-16 h-16 object-cover rounded-lg cursor-pointer shadow-sm border border-pink-100">
+                            <img id="mini3" onclick="trocarImagem(this.src)" class="thumb-minimal w-16 h-16 object-cover rounded-lg cursor-pointer shadow-sm border border-pink-100">
+                        </div>
+                    </div>
 
-                <!-- CATEGORIA -->
-                <p id="produtoCategoria"
-                    class="uppercase tracking-[4px] text-pink-400 font-bold text-sm mb-3">
+                    <!-- LADO DIREITO: INFORMAÇÕES -->
+                    <div class="lg:w-7/12 flex flex-col">
+                        <!-- Categoria -->
+                        <p id="produtoCategoria" class="text-pink-500 text-xs font-medium uppercase tracking-wider mb-2"></p>
+
+                        <!-- Nome -->
+                        <h1 id="produtoNome" class="text-2xl md:text-3xl font-bold text-gray-800 leading-tight mb-3"></h1>
+
+                        <!-- Linha decorativa -->
+                        <div class="divider-light w-12 my-2"></div>
+
+                        <!-- Avaliação -->
+                        <div class="flex items-center gap-2 my-3">
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-500 text-xs">(4.9 · 128 avaliações)</span>
+                        </div>
+
+                        <!-- Preço -->
+                        <div class="my-4">
+                            <p id="produtoPreco" class="text-3xl font-bold text-pink-600"></p>
+                            <p class="text-xs text-gray-400 mt-1">em até 6x sem juros</p>
+                        </div>
+
+                        <!-- Descrição -->
+                        <div class="border-l-2 border-pink-200 pl-4 my-4">
+                            <p id="produtoDescricao" class="text-gray-600 text-sm leading-relaxed"></p>
+                        </div>
+
+                        <!-- Benefícios (ícones simples) -->
+                        <div class="grid grid-cols-2 gap-2 my-4">
+                            <div class="benefit-minimal flex items-center gap-2 text-xs text-gray-600 p-2 rounded-lg border border-pink-100 bg-white">
+                                <i class="fas fa-truck text-pink-400 text-sm"></i> <span>Entrega rápida</span>
+                            </div>
+                            <div class="benefit-minimal flex items-center gap-2 text-xs text-gray-600 p-2 rounded-lg border border-pink-100 bg-white">
+                                <i class="fas fa-gem text-pink-400 text-sm"></i> <span>Produto premium</span>
+                            </div>
+                            <div class="benefit-minimal flex items-center gap-2 text-xs text-gray-600 p-2 rounded-lg border border-pink-100 bg-white">
+                                <i class="fas fa-medal text-pink-400 text-sm"></i> <span>Qualidade</span>
+                            </div>
+                            <div class="benefit-minimal flex items-center gap-2 text-xs text-gray-600 p-2 rounded-lg border border-pink-100 bg-white">
+                                <i class="fas fa-credit-card text-pink-400 text-sm"></i> <span>Parcele</span>
+                            </div>
+                        </div>
+
+                        <!-- Botões -->
+                        <div class="flex gap-3 mt-4">
+                            <button onclick="comprarProduto()" class="btn-minimal bg-pink-500 hover:bg-pink-600 text-white px-6 py-2.5 rounded-xl text-sm font-medium shadow-sm transition flex items-center gap-2">
+                                <i class="fas fa-shopping-cart text-sm"></i> Comprar
+                            </button>
+                            <button onclick="adicionarAoCarrinho()" class="btn-minimal bg-white border border-pink-300 hover:bg-pink-50 text-pink-600 px-5 py-2.5 rounded-xl text-sm font-medium transition flex items-center gap-2">
+                                <i class="fas fa-heart text-sm"></i> Adicionar
+                            </button>
+                            <a href="conveniencia4.html" class="btn-minimal bg-gray-100 hover:bg-gray-200 text-gray-600 px-5 py-2.5 rounded-xl text-sm font-medium transition flex items-center gap-2">
+                                <i class="fas fa-arrow-left text-sm"></i> Voltar
+                            </a>
+                        </div>
+                        
+                        <!-- Selo segurança -->
+                        <p class="text-[10px] text-gray-400 mt-5 flex items-center gap-2">
+                            <i class="fas fa-lock text-pink-400 text-xs"></i> 
+                            Compra segura · Ambiente protegido
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sugestões simples -->
+            <div class="mt-10">
+                <p class="text-sm text-gray-500 mb-3 flex items-center gap-2">
+                    <i class="fas fa-heart text-pink-400 text-xs"></i> Talvez você também goste
                 </p>
-
-                <!-- NOME -->
-                <h1 id="produtoNome"
-                    class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-5">
-                </h1>
-
-                <!-- AVALIAÇÃO -->
-                <div class="flex items-center gap-2 mb-6">
-
-                    <div class="text-yellow-400 text-lg">
-                        ⭐⭐⭐⭐⭐
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div class="bg-white rounded-xl p-3 text-center border border-pink-100 hover:shadow-sm transition">
+                        <i class="fas fa-bone text-pink-400 text-xl"></i>
+                        <p class="text-xs font-medium mt-1">Brinquedos</p>
                     </div>
-
-                    <span class="text-gray-400 text-sm">
-                        (4.9 avaliações)
-                    </span>
-
-                </div>
-
-                <!-- PREÇO -->
-                <div class="mb-8">
-
-                    <p id="produtoPreco"
-                        class="text-5xl font-bold text-pink-500">
-                    </p>
-
-                    <p class="text-sm text-gray-400 mt-2">
-                        ou em até 6x sem juros 💳
-                    </p>
-
-                </div>
-
-                <!-- DESCRIÇÃO -->
-                <div class="bg-[#FFF7FA] border border-pink-100 rounded-[25px] p-6 mb-8">
-
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">
-                        Sobre o produto
-                    </h2>
-
-                    <p id="produtoDescricao"
-                        class="text-gray-600 leading-relaxed text-[15px]">
-                    </p>
-
-                </div>
-
-                <!-- BENEFÍCIOS -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-
-                    <div class="bg-white border border-pink-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
-                        🚚 Entrega rápida
+                    <div class="bg-white rounded-xl p-3 text-center border border-pink-100 hover:shadow-sm transition">
+                        <i class="fas fa-apple-alt text-pink-400 text-xl"></i>
+                        <p class="text-xs font-medium mt-1">Ração</p>
                     </div>
-
-                    <div class="bg-white border border-pink-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
-                        💖 Produto premium
+                    <div class="bg-white rounded-xl p-3 text-center border border-pink-100 hover:shadow-sm transition">
+                        <i class="fas fa-bed text-pink-400 text-xl"></i>
+                        <p class="text-xs font-medium mt-1">Camas</p>
                     </div>
-
-                    <div class="bg-white border border-pink-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
-                        🐾 Qualidade garantida
+                    <div class="bg-white rounded-xl p-3 text-center border border-pink-100 hover:shadow-sm transition">
+                        <i class="fas fa-syringe text-pink-400 text-xl"></i>
+                        <p class="text-xs font-medium mt-1">Saúde</p>
                     </div>
-
-                    <div class="bg-white border border-pink-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
-                        💳 Parcelamento disponível
-                    </div>
-
                 </div>
-
-                <!-- BOTÕES -->
-                <div class="flex flex-wrap gap-4">
-
-                    <!-- COMPRAR -->
-                    <button onclick="comprarProduto()"
-                        class="bg-pink-400 hover:bg-pink-500 text-white px-10 py-4 rounded-2xl text-lg font-semibold shadow-lg hover:shadow-xl transition">
-
-                        Comprar Agora
-
-                    </button>
-
-                    <!-- VOLTAR -->
-                    <a href="index.html"
-                        class="bg-white border border-pink-200 hover:bg-pink-50 text-pink-500 px-8 py-4 rounded-2xl text-lg font-semibold transition">
-
-                        Voltar
-
-                    </a>
-
-                </div>
-
             </div>
-
         </div>
-
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-[#F4B8D7] text-center py-6 border-t-[5px] border-pink-400 mt-auto">
-
-        <p class="text-sm">
-            © 2026 Petshop Reino Animal • Todos os direitos reservados
-        </p>
-
+    <!-- FOOTER SIMPLES -->
+    <footer class="bg-[#F4B8D7] text-center py-5 border-t border-pink-300 mt-auto">
+        <p class="text-xs text-gray-700">© 2026 Petshop Reino Animal · Todos os direitos reservados</p>
     </footer>
 
     <script>
-
-        // PEGAR DADOS
-        let nome = localStorage.getItem("produtoNome");
-        let categoria = localStorage.getItem("produtoCategoria");
-        let imagem = localStorage.getItem("produtoImagem");
-        let preco = localStorage.getItem("produtoPreco");
-        let descricao = localStorage.getItem("produtoDescricao");
-
-        // MOSTRAR
-        document.getElementById("produtoNome").innerText = nome;
-
-        document.getElementById("produtoCategoria").innerText =
-            categoria;
-
-        document.getElementById("imagemPrincipal").src =
-            imagem;
-
-        document.getElementById("mini1").src =
-            imagem;
-
-        document.getElementById("mini2").src =
-            imagem;
-
-        document.getElementById("mini3").src =
-            imagem;
-
-        document.getElementById("produtoPreco").innerText =
-            "R$ " + Number(preco).toFixed(2).replace(".", ",");
-
-        document.getElementById("produtoDescricao").innerText =
-            descricao;
-
-        // TROCAR IMAGEM
-        function trocarImagem(novaImagem){
-
-            document.getElementById("imagemPrincipal").src =
-                novaImagem;
+        // PEGAR DADOS DO LOCALSTORAGE
+        let nome = localStorage.getItem("produtoNome") || "Produto";
+        let categoria = localStorage.getItem("produtoCategoria") || "Acessórios";
+        let imagem = localStorage.getItem("produtoImagem") || "";
+        let preco = localStorage.getItem("produtoPreco") || "0";
+        let descricao = localStorage.getItem("produtoDescricao") || "Produto de alta qualidade para o seu pet. Ideal para garantir conforto, diversão e bem-estar.";
+        
+        let quantidadeAtual = 1;
+        
+        // Formatar categoria para exibição
+        function formatarCategoria(cat) {
+            if (!cat) return "Produto";
+            let nomeFormatado = cat.replace(/-/g, " ");
+            return nomeFormatado.charAt(0).toUpperCase() + nomeFormatado.slice(1);
         }
-
-        // COMPRAR
-        function comprarProduto(){
-
-            let carrinho =
-                JSON.parse(localStorage.getItem("carrinho")) || [];
-
-            carrinho.push({
-                nome: nome,
-                categoria: categoria,
-                imagem: imagem,
-                preco: Number(preco),
-                quantidade: 1
-            });
-
-            localStorage.setItem(
-                "carrinho",
-                JSON.stringify(carrinho)
-            );
-
+        
+        // MOSTRAR DADOS NA TELA
+        document.getElementById("produtoNome").innerText = nome;
+        document.getElementById("produtoCategoria").innerText = formatarCategoria(categoria);
+        document.getElementById("breadcrumbCategoria").innerText = formatarCategoria(categoria);
+        
+        // Imagem
+        if (imagem && imagem !== "null" && imagem !== "") {
+            document.getElementById("imagemPrincipal").src = imagem;
+            document.getElementById("mini1").src = imagem;
+            document.getElementById("mini2").src = imagem;
+            document.getElementById("mini3").src = imagem;
+        } else {
+            let defaultImg = "https://cdn-icons-png.flaticon.com/512/1998/1998627.png";
+            document.getElementById("imagemPrincipal").src = defaultImg;
+            document.getElementById("mini1").src = defaultImg;
+            document.getElementById("mini2").src = defaultImg;
+            document.getElementById("mini3").src = defaultImg;
+        }
+        
+        // Preço
+        let precoNum = Number(preco);
+        document.getElementById("produtoPreco").innerHTML = `R$ ${precoNum.toFixed(2).replace(".", ",")}`;
+        document.getElementById("produtoDescricao").innerText = descricao;
+        
+        // ATUALIZAR BADGE DO CARRINHO
+        function atualizarBadgeCarrinho() {
+            let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            let totalItens = carrinho.reduce((sum, item) => sum + (item.quantidade || 1), 0);
+            let badge = document.getElementById("carrinhoBadge");
+            if (badge) badge.innerText = totalItens;
+        }
+        
+        // ADICIONAR AO CARRINHO
+        function adicionarAoCarrinho() {
+            let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            let indexExistente = carrinho.findIndex(item => item.nome === nome);
+            
+            if (indexExistente !== -1) {
+                carrinho[indexExistente].quantidade = (carrinho[indexExistente].quantidade || 1) + 1;
+            } else {
+                carrinho.push({
+                    nome: nome,
+                    categoria: categoria,
+                    imagem: imagem,
+                    preco: precoNum,
+                    quantidade: 1
+                });
+            }
+            
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+            atualizarBadgeCarrinho();
+            
+            // Feedback visual simples
+            let btn = event.target.closest('button');
+            let originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Adicionado';
+            btn.classList.add('bg-green-500', 'text-white', 'border-green-500');
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('bg-green-500', 'text-white', 'border-green-500');
+            }, 1200);
+        }
+        
+        // COMPRAR DIRETO
+        function comprarProduto() {
+            let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            let indexExistente = carrinho.findIndex(item => item.nome === nome);
+            
+            if (indexExistente !== -1) {
+                carrinho[indexExistente].quantidade = (carrinho[indexExistente].quantidade || 1) + 1;
+            } else {
+                carrinho.push({
+                    nome: nome,
+                    categoria: categoria,
+                    imagem: imagem,
+                    preco: precoNum,
+                    quantidade: 1
+                });
+            }
+            
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
             window.location.href = "compra.html";
         }
-
+        
+        // TROCAR IMAGEM PRINCIPAL
+        function trocarImagem(novaImagem) {
+            let imgPrincipal = document.getElementById("imagemPrincipal");
+            imgPrincipal.style.opacity = '0.6';
+            setTimeout(() => {
+                imgPrincipal.src = novaImagem;
+                imgPrincipal.onload = () => { imgPrincipal.style.opacity = '1'; };
+                if (imgPrincipal.complete) imgPrincipal.style.opacity = '1';
+            }, 100);
+        }
+        
+        // Inicializar
+        atualizarBadgeCarrinho();
     </script>
-
 </body>
 </html>

@@ -3,122 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petshop Reino Animal</title>
+    <title>Petshop Reino Animal | Cuidado e carinho que seu pet merece</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 (ícones mais profissionais e fofos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Ajustes sutis para manter a personalidade fofa e melhorar profissionalismo */
+        body {
+            scroll-behavior: smooth;
+        }
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15);
+        }
+        .btn-soft {
+            transition: all 0.2s ease;
+        }
+        .btn-soft:hover {
+            background-color: #f9a8d4 !important;
+            transform: scale(1.02);
+        }
+        /* input focus mais amigável */
+        .search-input:focus {
+            box-shadow: 0 0 0 2px #f9a8d4;
+            border-radius: 999px;
+        }
+        /* elementos decorativos suaves */
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #f9a8d4;
+            margin: 12px auto 0;
+            border-radius: 20px;
+        }
+        .rating-stars i {
+            color: #fbbf24;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+    </style>
 </head>
-
 <body class="bg-[#ECEDD1] text-gray-800 font-sans">
 
-  <header class="bg-[#F4B8D7] px-[30px] py-[7px] flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50">
+    <!-- HEADER profissional porém fofo: sticky + sombra suave -->
+    <header class="bg-[#F4B8D7] px-6 md:px-10 py-3 flex justify-between items-center border-b-[3px] border-[#fa8bc2] sticky top-0 z-50 shadow-sm">
+        <!-- LOGO com acessibilidade e leve zoom -->
+        <div class="transition-transform hover:scale-105 duration-200">
+            <img src="imgs/logo.png" alt="Petshop Reino Animal - Logotipo fofo"
+                class="w-[70px] rounded-full cursor-pointer drop-shadow-sm">
+        </div>
 
-    <!-- LOGO -->
+        <!-- MENU desktop com espaçamento mais clean -->
+        <nav class="space-x-8 font-semibold hidden md:flex items-center text-gray-700">
+            <a href="index.html" class="hover:text-pink-700 transition duration-200 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-pink-700 after:transition-all hover:after:w-full after:rounded-full">Home</a>
+            <a href="index.html#servicos" class="hover:text-pink-700 transition duration-200 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-pink-700 after:transition-all hover:after:w-full">Serviços</a>
+            <a href="agendamento.html" class="hover:text-pink-700 transition duration-200 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-pink-700 after:transition-all hover:after:w-full">Agendamentos</a>
+        </nav>
+
+        <!-- DIREITA: pesquisa + carrinho + perfil mais equilibrado -->
+        <div class="flex items-center gap-3 md:gap-5">
+            <!-- PESQUISA com ícone e placeholder mais suave -->
+            <div class="flex items-center bg-white rounded-full px-4 py-2 shadow-sm border border-pink-200 focus-within:ring-2 focus-within:ring-pink-300 transition-all">
+                <input type="text" placeholder="Pesquisar produtos ou serviços..." 
+                    class="outline-none text-sm px-1 w-[130px] md:w-[200px] bg-transparent">
+                <i class="fas fa-search text-gray-500 hover:text-pink-500 cursor-pointer transition text-lg"></i>
+            </div>
+
+            <!-- CARRINHO com badge mais harmonioso -->
+            <a href="compra.html" class="bg-white p-2.5 rounded-full shadow-sm hover:bg-pink-100 transition-all relative border border-pink-100 hover:scale-105 duration-200">
+                <i class="fas fa-shopping-bag text-pink-500 text-xl"></i>
+                <span class="absolute -top-1.5 -right-1.5 bg-pink-500 text-white text-[11px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">
+                    0
+                </span>
+            </a>
+
+            <!-- PERFIL com efeito suave -->
+            <a href="login.html" class="bg-white p-1 rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 border border-pink-100">
+                <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Minha conta"
+                    class="w-9 h-9 rounded-full">
+            </a>
+        </div>
+    </header>
+
+    <!-- BANNER (totalmente inalterado, conforme solicitado) -->
     <div>
-        <img src="imgs/logo.png"
-            class="w-[70px] rounded-full cursor-pointer">
+        <img src="imgs/banner.png" alt="Banner Reino Animal" class="w-full object-cover">
     </div>
 
-    <!-- MENU -->
-    <nav class="space-x-6 font-semibold hidden md:block">
-
-        <a href="index.html"
-            class="hover:text-pink-600 transition">
-            Home
-        </a>
-
-        <a href="index.html#servicos"
-            class="hover:text-pink-600 transition">
-            Serviços
-        </a>
-
-        <a href="agendamento.html"
-            class="hover:text-pink-600 transition">
-            Agendamentos
-        </a>
-
-    </nav>
-
-    <!-- DIREITA -->
-    <div class="flex items-center gap-4">
-
-        <!-- PESQUISA -->
-        <div class="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
-
-            <input type="text"
-                placeholder="Pesquisar..."
-                class="outline-none text-sm px-2 w-[120px] md:w-[180px]">
-
-            <svg xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 text-gray-600 cursor-pointer hover:text-pink-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-
-                <path stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
-
-            </svg>
-
+    <!-- DIFERENCIAIS: cards mais organizados e legíveis, mantendo mesma estrutura mas com melhor espaçamento e ícones originais -->
+    <div class="flex justify-center gap-8 md:gap-20 mt-12 flex-wrap text-center px-4">
+        <div class="flex flex-col items-center gap-2 bg-white/60 backdrop-blur-sm p-3 rounded-2xl min-w-[140px] shadow-sm">
+            <img src="imgs/estrela.png" class="w-[70px] md:w-[80px]" alt="5 estrelas">
+            <p class="text-sm font-medium text-gray-700">Avaliação 5 estrelas</p>
         </div>
-
-        <!-- CARRINHO -->
-        <a href="compra.html"
-            class="bg-white p-3 rounded-full shadow-md hover:bg-pink-100 transition relative">
-
-            <svg xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6 text-pink-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-
-                <path stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.293 1.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-
-            </svg>
-
-            <!-- BOLINHA -->
-            <span class="absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">
-                0
-            </span>
-
-        </a>
-
+        <div class="flex flex-col items-center gap-2 bg-white/60 backdrop-blur-sm p-3 rounded-2xl min-w-[140px] shadow-sm">
+            <img src="imgs/frete.png" class="w-[70px] md:w-[80px]" alt="Frete grátis">
+            <p class="text-sm font-medium text-gray-700">Frete grátis</p>
+        </div>
+        <div class="flex flex-col items-center gap-2 bg-white/60 backdrop-blur-sm p-3 rounded-2xl min-w-[140px] shadow-sm">
+            <img src="imgs/cartao.png" class="w-[70px] md:w-[80px]" alt="Pagamento facilitado">
+            <p class="text-sm font-medium text-gray-700">Até 3x sem juros</p>
+        </div>
     </div>
 
-</header>
-
-
-    <div>
-        <img src="imgs/banner.png" class="w-full object-cover">
-    </div>
-
-
-    <div class="flex justify-center gap-20 mt-10 flex-wrap text-center">
-        
-        <div class="flex items-center gap-3 text-sm">
-            <img src="imgs/estrela.png" class="w-[80px]">
-            <p>Avaliação 5 estrelas</p>
-        </div>
-
-        <div class="flex items-center gap-3 text-sm">
-            <img src="imgs/frete.png" class="w-[80px]">
-            <p>Frete grátis</p>
-        </div>
-
-        <div class="flex items-center gap-3 text-sm">
-            <img src="imgs/cartao.png" class="w-[80px]">
-            <p>Até 3x sem juros</p>
-        </div>
-
-    </div>
-
-    <section class="flex justify-center items-center px-[20px] py-[40px] bg-[#F4B8D7] mt-10 text-center">
-        <div class="max-w-[600px]">
-            <h2 class="text-2xl font-bold mb-3">Sobre nós</h2>
-            <p>
+    <!-- SOBRE NÓS: mais refinado visualmente, com fundo suave e ícone de coração -->
+    <section class="flex justify-center items-center px-6 py-12 md:py-14 bg-[#F4B8D7] mt-12 text-center relative overflow-hidden">
+        <div class="max-w-2xl relative z-10">
+            <div class="flex justify-center mb-2">
+                <i class="fas fa-paw text-pink-700 text-3xl opacity-70"></i>
+            </div>
+            <h2 class="text-3xl font-bold mb-4 text-gray-800 tracking-tight">Sobre nós</h2>
+            <div class="w-20 h-1 bg-pink-500 mx-auto rounded-full mb-5"></div>
+            <p class="text-gray-700 text-base md:text-lg leading-relaxed font-medium">
                 Somos um petshop apaixonado por animais e dedicado a oferecer o melhor cuidado
                 para o seu melhor amigo. Aqui, cada pet é tratado com carinho e atenção, como
                 parte da família. Trabalhamos com produtos de qualidade e serviços especializados,
@@ -127,51 +128,121 @@
         </div>
     </section>
 
+    <!-- SERVIÇOS OFERECIDOS: cards mais profissionais mas mantendo fofura, sem alterar imagens nem estrutura principal -->
+    <section id="servicos" class="px-6 py-16 text-center">
+        <h2 class="text-3xl font-bold mb-3 text-gray-800 section-title inline-block pb-2">Nossos serviços especiais</h2>
+        <p class="text-gray-600 max-w-lg mx-auto mb-12 text-sm md:text-base">Carinho, qualidade e segurança para o seu pet</p>
 
-  <section id="servicos" class="p-10 text-center">
-        <h2 class="text-2xl font-bold mb-6">Serviços oferecidos</h2>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-[1000px] mx-auto">
-
-            <div class="bg-white rounded-[15px] p-[15px] shadow-md">
-                <img src="imgs/estetica.png" class="w-[80%] h-[150px] object-contain mx-auto">
-                <h3 class="mt-2 font-bold text-lg">Estética e Higiene</h3>
-                <a href="conveniencia1.html" class="block mt-2 p-2 bg-[#ecbae8] text-white rounded-[10px] hover:bg-[#d88cc2] transition">
-                    Ver mais
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-[1100px] mx-auto">
+            <!-- Card 1 - Estética e Higiene -->
+            <div class="bg-white rounded-2xl p-5 shadow-md card-hover transition-all duration-300 border border-pink-100">
+                <div class="bg-pink-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <img src="imgs/estetica.png" class="w-[70px] h-[70px] object-contain" alt="Estética e Higiene">
+                </div>
+                <h3 class="mt-3 font-bold text-lg text-gray-800">Estética e Higiene</h3>
+                <p class="text-xs text-gray-500 mt-1 hidden md:block">Banho, tosa e cuidados especiais</p>
+                <a href="conveniencia1.html" class="inline-block mt-4 px-5 py-2 bg-[#ecbae8] text-white rounded-full text-sm font-semibold btn-soft shadow-sm hover:shadow-md transition">
+                    Ver mais <i class="fas fa-arrow-right ml-1 text-xs"></i>
                 </a>
             </div>
 
-            <div class="bg-white rounded-[15px] p-[15px] shadow-md">
-                <img src="imgs/clinica.png" class="w-[80%] h-[150px] object-contain mx-auto">
-                <h3 class="mt-2 font-bold text-lg">Saúde e Clínica </h3>
-                <a href="conveniencia2.html" class="block mt-2 p-2 bg-[#ecbae8] text-white rounded-[10px] hover:bg-[#d88cc2] transition">
-                    Ver mais
+            <!-- Card 2 - Saúde e Clínica -->
+            <div class="bg-white rounded-2xl p-5 shadow-md card-hover transition-all duration-300 border border-pink-100">
+                <div class="bg-pink-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <img src="imgs/clinica.png" class="w-[70px] h-[70px] object-contain" alt="Saúde e Clínica">
+                </div>
+                <h3 class="mt-3 font-bold text-lg text-gray-800">Saúde e Clínica</h3>
+                <p class="text-xs text-gray-500 mt-1 hidden md:block">Vacinas, consultas e exames</p>
+                <a href="conveniencia2.html" class="inline-block mt-4 px-5 py-2 bg-[#ecbae8] text-white rounded-full text-sm font-semibold btn-soft shadow-sm hover:shadow-md transition">
+                    Ver mais <i class="fas fa-arrow-right ml-1 text-xs"></i>
                 </a>
             </div>
 
-            <div class="bg-white rounded-[15px] p-[15px] shadow-md">
-                <img src="imgs/bem estar.png" class="w-[80%] h-[150px] object-contain mx-auto">
-                <h3 class="mt-2 font-bold text-lg">Bem-estar e Cuidados</h3>
-                <a href="conveniencia3.html" class="block mt-2 p-2 bg-[#ecbae8] text-white rounded-[10px] hover:bg-[#d88cc2] transition">
-                    Ver mais
+            <!-- Card 3 - Bem-estar e Cuidados -->
+            <div class="bg-white rounded-2xl p-5 shadow-md card-hover transition-all duration-300 border border-pink-100">
+                <div class="bg-pink-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <img src="imgs/bem estar.png" class="w-[70px] h-[70px] object-contain" alt="Bem-estar">
+                </div>
+                <h3 class="mt-3 font-bold text-lg text-gray-800">Bem-estar e Cuidados</h3>
+                <p class="text-xs text-gray-500 mt-1 hidden md:block">Day care, adestramento e lazer</p>
+                <a href="conveniencia3.html" class="inline-block mt-4 px-5 py-2 bg-[#ecbae8] text-white rounded-full text-sm font-semibold btn-soft shadow-sm hover:shadow-md transition">
+                    Ver mais <i class="fas fa-arrow-right ml-1 text-xs"></i>
                 </a>
             </div>
 
-            <div class="bg-white rounded-[15px] p-[15px] shadow-md">
-                <img src="imgs/produtos .png" class="w-[80%] h-[150px] object-contain mx-auto">
-                <h3 class="mt-2 font-bold text-lg">Conveniência</h3>
-                <a href="conveniencia4.html" class="block mt-2 p-2 bg-[#ecbae8] text-white rounded-[10px] hover:bg-[#d88cc2] transition">
-                    Ver mais
+            <!-- Card 4 - Conveniência -->
+            <div class="bg-white rounded-2xl p-5 shadow-md card-hover transition-all duration-300 border border-pink-100">
+                <div class="bg-pink-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <img src="imgs/produtos .png" class="w-[70px] h-[70px] object-contain" alt="Conveniência">
+                </div>
+                <h3 class="mt-3 font-bold text-lg text-gray-800">Conveniência</h3>
+                <p class="text-xs text-gray-500 mt-1 hidden md:block">Ração, acessórios e brinquedos</p>
+                <a href="conveniencia4.html" class="inline-block mt-4 px-5 py-2 bg-[#ecbae8] text-white rounded-full text-sm font-semibold btn-soft shadow-sm hover:shadow-md transition">
+                    Ver mais <i class="fas fa-arrow-right ml-1 text-xs"></i>
                 </a>
             </div>
-
         </div>
     </section>
 
- 
-    <footer class="bg-[#F4B8D7] text-center py-6 border-t-[5px] border-pink-400 mt-5">
-        <p class="text-sm">© 2026 Petshop Reino Animal</p>
+    <!-- FOOTER mais completo, profissional mas mantendo estética fofa -->
+    <footer class="bg-[#F4B8D7] text-center pt-8 pb-6 border-t-[4px] border-pink-400 mt-8 shadow-inner">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+            <p class="text-gray-700 font-medium">© 2026 Petshop Reino Animal · Amor e cuidado em cada detalhe</p>
+            <div class="flex gap-5 text-pink-800">
+                <a href="#" class="hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-whatsapp text-xl"></i></a>
+            </div>
+            <p class="text-gray-600 text-xs">🐾 Seu pet merece o melhor 🐾</p>
+        </div>
+        <div class="mt-4 text-[11px] text-pink-800 opacity-70">
+            <i class="fas fa-paw"></i> Feito com carinho para pets e seus humanos
+        </div>
     </footer>
 
+    <!-- pequeno script para funcionalidade interativa do carrinho (manter contador visual, sem quebrar layout) 
+         e suavizar links internos, sem alterar estrutura, só adicionando leveza -->
+    <script>
+        (function() {
+            // Mantém a badge do carrinho dinâmica simulando persistência (não interfere nos demais links)
+            let cartCount = 0;
+            const badge = document.querySelector('.absolute.-top-1\\.5.-right-1\\.5');
+            if(badge) {
+                // exemplo: poderia vir de localStorage, apenas deixamos o "0" ou personaliza 
+                const saved = localStorage.getItem('reino_cart_count');
+                if(saved && !isNaN(parseInt(saved))) {
+                    cartCount = parseInt(saved);
+                    badge.innerText = cartCount;
+                    if(cartCount === 0) badge.innerText = '0';
+                }
+                // atualiza a cada interação leve? só para demonstração, mas sem atrapalhar
+                window.updateCartBadge = (newCount) => {
+                    cartCount = newCount;
+                    if(badge) badge.innerText = cartCount;
+                    localStorage.setItem('reino_cart_count', cartCount);
+                };
+            }
+            // hover e transições já estão no CSS
+            console.log("Petshop Reino Animal - experiência aprimorada");
+        })();
+    </script>
 </body>
 </html>
+
+<script>
+function atualizarBadgeCarrinho() {
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    let totalItens = carrinho.reduce((total, item) => {
+        return total + (item.quantidade || 1);
+    }, 0);
+
+    document.getElementById("carrinhoBadge").innerText = totalItens;
+}
+
+// Atualiza quando a página abre
+atualizarBadgeCarrinho();
+
+// Atualiza quando voltar para a página
+window.addEventListener("focus", atualizarBadgeCarrinho);
+</script>

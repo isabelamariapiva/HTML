@@ -5,652 +5,418 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Petshop Reino Animal</title>
+  <title>Produtos | Petshop Reino Animal</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body class="bg-[#ECEDD1] font-sans text-gray-800 min-h-screen flex flex-col overflow-x-hidden">
 
-  <!-- HEADER -->
-  <header class="bg-[#F4B8D7] px-8 py-3 flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50">
+<header class="bg-[#F4B8D7] px-[30px] py-[7px] flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50 shadow-md">
 
-    <button onclick="abrirMenu()"
-      class="bg-pink-400 hover:bg-pink-500 text-white px-4 py-2 rounded-xl shadow transition">
-      ☰
-    </button>
+    <!-- ESQUERDA -->
+    <div class="flex items-center gap-4">
+        <button onclick="abrirMenu()" class="bg-pink-400 hover:bg-pink-500 text-white px-4 py-2 rounded-xl shadow transition">
+            <i class="fas fa-bars"></i>
+        </button>
+        <img src="imgs/logo.png" alt="Logo" class="w-[70px] rounded-full cursor-pointer hover:scale-105 transition">
+    </div>
 
-    <img src="imgs/logo.png"
-      class="w-[70px] rounded-full cursor-pointer">
-
+    <!-- MENU DESKTOP -->
     <nav class="space-x-6 font-semibold hidden md:block">
-      <a href="index.html" class="hover:text-pink-600 transition">Home</a>
-      <a href="index.html#servicos" class="hover:text-pink-600 transition">Serviços</a>
-      <a href="agendamento.html" class="hover:text-pink-600 transition">Agendamentos</a>
+        <a href="index.html" class="hover:text-pink-600 transition">Home</a>
+        <a href="index.html#servicos" class="hover:text-pink-600 transition">Serviços</a>
+        <a href="agendamento.html" class="hover:text-pink-600 transition">Agendamentos</a>
+        <a href="produtos.html" class="text-pink-700 transition">Produtos</a>
     </nav>
 
-    <!-- PESQUISA -->
-    <div class="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
+    <!-- DIREITA -->
+    <div class="flex items-center gap-4">
+        <!-- PESQUISA -->
+        <div class="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
+            <input type="text" id="searchInput" placeholder="Pesquisar produtos..." class="outline-none text-sm px-2 w-[120px] md:w-[180px]">
+            <i class="fas fa-search text-gray-600 cursor-pointer hover:text-pink-500"></i>
+        </div>
 
-      <input type="text"
-        placeholder="Pesquisar..."
-        class="outline-none text-sm px-2 w-[120px] md:w-[180px]">
+        <!-- CARRINHO -->
+        <a href="compra.html" class="bg-white p-3 rounded-full shadow-md hover:bg-pink-100 transition relative">
+            <i class="fas fa-shopping-bag text-pink-500 text-xl"></i>
+            <span class="absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">0</span>
+        </a>
 
-      <svg xmlns="http://www.w3.org/2000/svg"
-        class="w-5 h-5 text-gray-600 cursor-pointer hover:text-pink-500"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor">
-
-        <path stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-
+        <!-- PERFIL -->
+        <a href="login.html" class="bg-white p-1 rounded-full shadow-md hover:bg-pink-100 hover:scale-110 transition">
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Perfil" class="w-9 h-9 rounded-full">
+        </a>
     </div>
+</header>
 
-  </header>
+<!-- CATEGORIAS HEADER (rolável) -->
+<div id="categoriasHeader" class="bg-pink-100 border-t border-pink-200 px-6 py-3 flex gap-3 overflow-x-auto whitespace-nowrap"></div>
 
-  <!-- CATEGORIAS -->
-  <div id="categoriasHeader"
-    class="bg-pink-100 border-t border-pink-200 px-6 py-3 flex gap-3 overflow-x-auto whitespace-nowrap">
-  </div>
-
-  <!-- MENU -->
-  <div id="menu"
-    class="fixed top-0 left-[-320px] w-[290px] h-full bg-pink-50 shadow-2xl transition-all duration-300 z-50 p-6 overflow-y-auto">
-
+<!-- MENU LATERAL -->
+<div id="menu" class="fixed top-0 left-[-320px] w-[290px] h-full bg-pink-50 shadow-2xl transition-all duration-300 z-50 p-6 overflow-y-auto">
     <div class="flex justify-between items-center mb-6">
-
-      <h2 class="text-2xl font-bold">
-        Categorias
-      </h2>
-
-      <button onclick="fecharMenu()"
-        class="text-xl hover:text-red-500 transition">
-        ✕
-      </button>
-
+        <h2 class="text-2xl font-bold text-pink-700"><i class="fas fa-paw"></i> Categorias</h2>
+        <button onclick="fecharMenu()" class="text-2xl hover:text-red-500 transition">✕</button>
     </div>
 
-    <!-- CONFIG -->
-    <button onclick="toggleConfig()"
-      class="bg-pink-400 hover:bg-pink-500 text-white px-4 py-3 rounded-2xl w-full mb-5 transition shadow">
-
-      ⚙️ Gerenciar Categorias
+    <button onclick="toggleConfig()" class="bg-pink-400 hover:bg-pink-500 text-white px-4 py-3 rounded-2xl w-full mb-5 transition shadow">
+        <i class="fas fa-cog"></i> Gerenciar Categorias
     </button>
 
-    <!-- BOX -->
     <div id="configBox" class="hidden mb-6">
-
-      <input id="novaCategoria"
-        type="text"
-        placeholder="Nova categoria"
-        class="border border-pink-200 rounded-2xl p-3 w-full mb-3 outline-none">
-
-      <button onclick="adicionarCategoria()"
-        class="bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-2xl w-full transition shadow">
-
-        Adicionar Categoria
-      </button>
-
+        <input id="novaCategoria" type="text" placeholder="Nova categoria" class="border border-pink-200 rounded-2xl p-3 w-full mb-3 outline-none focus:ring-2 focus:ring-pink-300">
+        <button onclick="adicionarCategoria()" class="bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-2xl w-full transition shadow">
+            Adicionar Categoria
+        </button>
     </div>
 
-    <!-- LISTA -->
     <ul id="listaCategorias" class="space-y-3"></ul>
+</div>
 
-  </div>
-
-  <!-- MAIN -->
-  <main class="max-w-7xl mx-auto px-6 py-10 flex-1 w-full">
-
-    <!-- TOPO -->
-    <div class="flex items-center justify-between mb-8">
-
-      <h1 class="text-4xl font-bold">
-        Produtos
-      </h1>
-
-      <button onclick="abrirModal()"
-        class="bg-pink-400 hover:bg-pink-500 text-white px-5 py-3 rounded-2xl shadow-lg transition">
-
-        + Novo Produto
-      </button>
-
+<!-- MAIN -->
+<main class="max-w-7xl mx-auto px-6 py-10 flex-1 w-full">
+    <div class="flex items-center justify-between mb-8 flex-wrap gap-4">
+        <h1 class="text-4xl font-bold text-gray-800 flex items-center gap-2">
+            <i class="fas fa-box-open text-pink-500"></i> Nossos Produtos
+        </h1>
+        <button onclick="abrirModal()" class="bg-pink-400 hover:bg-pink-500 text-white px-5 py-3 rounded-2xl shadow-lg transition flex items-center gap-2">
+            <i class="fas fa-plus"></i> Novo Produto
+        </button>
     </div>
 
-    <!-- GRID -->
-    <div id="produtos"
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- GRID DE PRODUTOS -->
+    <div id="produtos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+</main>
 
-    </div>
+<!-- FOOTER -->
+<footer class="bg-[#F4B8D7] text-center py-6 border-t-[5px] border-pink-400 mt-auto">
+    <p class="text-sm">© 2026 Petshop Reino Animal • Todos os direitos reservados</p>
+</footer>
 
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="bg-[#F4B8D7] text-center py-6 border-t-[5px] border-pink-400 mt-auto">
-    <p class="text-sm">
-      © 2026 Petshop Reino Animal • Todos os direitos reservados
-    </p>
-  </footer>
-
-  <!-- MODAL -->
-  <div id="modal"
-    class="hidden fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4">
-
+<!-- MODAL NOVO PRODUTO -->
+<div id="modal" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4">
     <div class="bg-white rounded-3xl p-7 w-full max-w-[420px] shadow-2xl">
-
-      <h2 class="text-3xl font-bold text-center mb-6">
-        Novo Produto
-      </h2>
-
-      <!-- PREÇO -->
-      <input id="precoProduto"
-        type="number"
-        step="0.01"
-        placeholder="Preço do produto"
-        class="border rounded-2xl p-4 w-full mb-4 outline-none">
-
-      <!-- NOME -->
-      <input id="nomeProduto"
-        type="text"
-        placeholder="Nome do produto"
-        class="border rounded-2xl p-4 w-full mb-4 outline-none">
-
-      <!-- DESCRIÇÃO -->
-      <textarea id="descricaoProduto"
-        placeholder="Descrição do produto"
-        class="border rounded-2xl p-4 w-full mb-4 outline-none h-[120px] resize-none"></textarea>
-
-      <!-- CATEGORIA -->
-      <select id="categoriaProduto"
-        class="border rounded-2xl p-4 w-full mb-4 outline-none">
-
-        <option value="">
-          Escolha uma categoria
-        </option>
-
-      </select>
-
-      <!-- FOTO -->
-      <input id="fotoProduto"
-        type="file"
-        accept="image/*"
-        class="border rounded-2xl p-3 w-full mb-6">
-
-      <!-- BOTÕES -->
-      <div class="flex gap-3">
-
-        <button onclick="salvarProduto()"
-          class="flex-1 bg-pink-400 hover:bg-pink-500 text-white py-3 rounded-2xl transition">
-
-          Salvar
-        </button>
-
-        <button onclick="fecharModal()"
-          class="flex-1 bg-gray-200 hover:bg-gray-300 py-3 rounded-2xl transition">
-
-          Cancelar
-        </button>
-
-      </div>
-
+        <h2 class="text-3xl font-bold text-center mb-6 text-pink-600">Novo Produto</h2>
+        
+        <input id="precoProduto" type="number" step="0.01" placeholder="Preço do produto" class="border border-pink-200 rounded-2xl p-4 w-full mb-4 outline-none focus:ring-2 focus:ring-pink-300">
+        <input id="nomeProduto" type="text" placeholder="Nome do produto" class="border border-pink-200 rounded-2xl p-4 w-full mb-4 outline-none focus:ring-2 focus:ring-pink-300">
+        <textarea id="descricaoProduto" placeholder="Descrição do produto" class="border border-pink-200 rounded-2xl p-4 w-full mb-4 outline-none h-[120px] resize-none focus:ring-2 focus:ring-pink-300"></textarea>
+        
+        <select id="categoriaProduto" class="border border-pink-200 rounded-2xl p-4 w-full mb-4 outline-none focus:ring-2 focus:ring-pink-300">
+            <option value="">Escolha uma categoria</option>
+        </select>
+        
+        <input id="fotoProduto" type="file" accept="image/*" class="border border-pink-200 rounded-2xl p-3 w-full mb-6">
+        
+        <div class="flex gap-3">
+            <button onclick="salvarProduto()" class="flex-1 bg-pink-400 hover:bg-pink-500 text-white py-3 rounded-2xl transition">Salvar</button>
+            <button onclick="fecharModal()" class="flex-1 bg-gray-200 hover:bg-gray-300 py-3 rounded-2xl transition">Cancelar</button>
+        </div>
     </div>
-
-  </div>
-
-  <script>
-
-    // MENU
-    function abrirMenu() {
-      document.getElementById("menu").style.left = "0";
-    }
-
-    function fecharMenu() {
-      document.getElementById("menu").style.left = "-320px";
-    }
-
-    // CONFIG
-    function toggleConfig() {
-      document.getElementById("configBox").classList.toggle("hidden");
-    }
-
-    // MODAL
-    function abrirModal() {
-      document.getElementById("modal").classList.remove("hidden");
-    }
-
-    function fecharModal() {
-      document.getElementById("modal").classList.add("hidden");
-    }
-
-    // FILTRAR
-    function filtrar(categoria) {
-
-      let produtos = document.querySelectorAll(".produto");
-
-      produtos.forEach(produto => {
-
-        if (categoria === "todos") {
-
-          produto.style.display = "block";
-
-        } else {
-
-          if (produto.classList.contains(categoria)) {
-            produto.style.display = "block";
-          } else {
-            produto.style.display = "none";
-          }
-
-        }
-
-      });
-
-    }
-
-    // LOCAL STORAGE
-    function pegarProdutos() {
-      return JSON.parse(localStorage.getItem("produtos")) || [];
-    }
-
-    function salvarProdutos(produtos) {
-      localStorage.setItem("produtos", JSON.stringify(produtos));
-    }
-
-    // ABRIR PRODUTO
-    function abrirProduto(nome, categoria, imagem, preco, descricao) {
-
-      localStorage.setItem("produtoNome", nome);
-      localStorage.setItem("produtoCategoria", categoria);
-      localStorage.setItem("produtoImagem", imagem);
-      localStorage.setItem("produtoPreco", preco);
-      localStorage.setItem("produtoDescricao", descricao);
-
-      window.location.href = "produto.html";
-    }
-
-    // DELETAR PRODUTO
-    function deletarProduto(index) {
-
-      if (!confirm("Excluir produto?")) return;
-
-      let produtos = pegarProdutos();
-
-      produtos.splice(index, 1);
-
-      salvarProdutos(produtos);
-
-      renderizarProdutos();
-    }
-
-    // CRIAR CARD
-    function criarCard(produto, index) {
-
-      let produtosDiv = document.getElementById("produtos");
-
-      let card = document.createElement("div");
-
-      card.className =
-        `produto ${produto.categoria}
-        bg-white rounded-3xl overflow-hidden
-        shadow-lg hover:scale-105 transition relative`;
-
-      card.innerHTML = `
-
-        <!-- LIXEIRA -->
-        <button
-          onclick="deletarProduto(${index})"
-          class="absolute top-3 right-3 bg-red-500 hover:bg-red-600 text-white w-9 h-9 rounded-full shadow-lg z-10">
-
-          🗑️
-        </button>
-
-        <!-- FOTO -->
-        <img
-          src="${produto.imagem}"
-          class="w-full h-[220px] object-cover"
-        >
-
-        <!-- TEXOS -->
-        <div class="p-5">
-
-          <h3 class="font-bold text-xl mb-1">
-            ${produto.nome}
-          </h3>
-
-          <p class="text-gray-500 mb-3">
-            ${produto.categoria.replace("-", " ")}
-          </p>
-
-          <p class="text-pink-600 font-bold mb-3">
-            R$ ${produto.preco}
-          </p>
-
-          <!-- DESCRIÇÃO -->
-          <p class="text-gray-600 text-sm mb-5">
-            ${produto.descricao}
-          </p>
-
-          <!-- BOTÃO -->
-          <button
-         onclick="abrirProduto(
-  '${produto.nome}',
-  '${produto.categoria}',
-  '${produto.imagem}',
-  '${produto.preco}',
-  '${produto.descricao}'
-)"
-            class="w-full bg-pink-400 hover:bg-pink-500 text-white py-3 rounded-2xl transition">
-
-            Comprar
-          </button>
-
-        </div>
-      `;
-
-      produtosDiv.appendChild(card);
-    }
-
-    // RENDERIZAR
-    function renderizarProdutos() {
-
-      let produtosDiv = document.getElementById("produtos");
-
-      produtosDiv.innerHTML = `
-
-        <!-- CARD ADD -->
-        <div onclick="abrirModal()"
-          class="bg-white border-2 border-dashed border-pink-300 rounded-3xl h-[340px] flex flex-col items-center justify-center cursor-pointer hover:scale-105 hover:border-pink-500 transition shadow-md">
-
-          <div class="text-7xl text-pink-400">
-            +
-          </div>
-
-          <p class="mt-4 text-pink-500 font-semibold text-lg">
-            Adicionar Produto
-          </p>
-
-        </div>
-      `;
-
-      let produtos = pegarProdutos();
-
-      produtos.forEach((produto, index) => {
-        criarCard(produto, index);
-      });
-
-    }
-
-    // SALVAR PRODUTO
-    function salvarProduto() {
-
-      let nome = document.getElementById("nomeProduto").value;
-      let categoria = document.getElementById("categoriaProduto").value;
-      let foto = document.getElementById("fotoProduto").files[0];
-      let preco = document.getElementById("precoProduto").value;
-      let descricao = document.getElementById("descricaoProduto").value;
-
-      if (!nome || !categoria || !foto || !preco || !descricao) {
-        alert("Preencha todos os campos!");
-        return;
-      }
-
-      let leitor = new FileReader();
-
-      leitor.onload = function (e) {
-
-        let produto = {
-          nome: nome,
-          categoria: categoria,
-          imagem: e.target.result,
-          preco: Number(preco),
-          descricao: descricao
-        };
-
-        let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-
-        produtos.push(produto);
-
-        localStorage.setItem("produtos", JSON.stringify(produtos));
-
-        renderizarProdutos();
-
-        document.getElementById("nomeProduto").value = "";
-        document.getElementById("categoriaProduto").value = "";
-        document.getElementById("fotoProduto").value = "";
-        document.getElementById("precoProduto").value = "";
-        document.getElementById("descricaoProduto").value = "";
-
-        fecharModal();
-      };
-
-      leitor.readAsDataURL(foto);
-    }
-
-    // CATEGORIAS
-    async function carregarCategorias() {
-
-      try {
-
-        let res = await fetch("http://localhost:8080/categoria");
-
-        let dados = await res.json();
-
-        let lista = document.getElementById("listaCategorias");
-
-        let header = document.getElementById("categoriasHeader");
-
-        let select = document.getElementById("categoriaProduto");
-
-        lista.innerHTML = "";
-
-        header.innerHTML = "";
-
-        select.innerHTML = `
-          <option value="">
-            Escolha uma categoria
-          </option>
-        `;
-
-        // TODOS
-        let btnTodos = document.createElement("button");
-
-        btnTodos.innerText = "Todos";
-
-        btnTodos.className =
-          "bg-white hover:bg-pink-400 hover:text-white px-5 py-2 rounded-full shadow transition";
-
-        btnTodos.onclick = () => {
-          filtrar("todos");
-          fecharMenu();
-        };
-
-        header.appendChild(btnTodos);
-
-        // MENU TODOS
-        let liTodos = document.createElement("li");
-
-        liTodos.innerText = "Todos";
-
-        liTodos.className =
-          "bg-white px-4 py-3 rounded-2xl shadow cursor-pointer hover:text-pink-500";
-
-        liTodos.onclick = () => {
-          filtrar("todos");
-          fecharMenu();
-        };
-
-        lista.appendChild(liTodos);
-
-        // CATEGORIAS
-        dados.forEach(cat => {
-
-          let nomeClasse = cat.nome
-            .toLowerCase()
-            .trim()
-            .replace(/\s+/g, "-");
-
-          // SELECT
-          let option = document.createElement("option");
-
-          option.value = nomeClasse;
-
-          option.innerText = cat.nome;
-
-          select.appendChild(option);
-
-          // HEADER
-          let btnHeader = document.createElement("button");
-
-          btnHeader.innerText = cat.nome;
-
-          btnHeader.className =
-            "bg-white hover:bg-pink-400 hover:text-white px-5 py-2 rounded-full shadow transition whitespace-nowrap";
-
-          btnHeader.onclick = () => {
-            filtrar(nomeClasse);
-          };
-
-          header.appendChild(btnHeader);
-
-          // MENU
-          let li = document.createElement("li");
-
-          li.className =
-            "flex items-center justify-between bg-white px-4 py-3 rounded-2xl shadow hover:shadow-lg transition";
-
-          // NOME
-          let span = document.createElement("span");
-
-          span.innerText = cat.nome;
-
-          span.className =
-            "cursor-pointer font-medium hover:text-pink-500 transition";
-
-          span.onclick = () => {
-
-            filtrar(nomeClasse);
-
-            fecharMenu();
-          };
-
-          // BOTÕES
-          let actions = document.createElement("div");
-
-          actions.className =
-            "flex items-center gap-2";
-
-          // +
-          let btnAdd = document.createElement("button");
-
-          btnAdd.innerText = "+";
-
-          btnAdd.className =
-            "bg-green-400 hover:bg-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center text-lg transition";
-
-          btnAdd.onclick = (e) => {
-
-            e.stopPropagation();
-
-            abrirModal();
-
-            fecharMenu();
-
-            document.getElementById("categoriaProduto").value = nomeClasse;
-          };
-
-          // LIXEIRA
-          let btnDelete = document.createElement("button");
-
-          btnDelete.innerText = "🗑️";
-
-          btnDelete.className =
-            "hover:scale-110 transition";
-
-          btnDelete.onclick = async (e) => {
-
-            e.stopPropagation();
-
-            if (confirm("Excluir categoria?")) {
-
-              try {
-
-                await fetch(`http://localhost:8080/categoria/${cat.id}`, {
-                  method: "DELETE"
-                });
-
-                carregarCategorias();
-
-              } catch (erro) {
-
-                console.log("Erro:", erro);
-              }
-
+</div>
+
+<script>
+    // ========== MENU LATERAL ==========
+    function abrirMenu() { document.getElementById("menu").style.left = "0"; }
+    function fecharMenu() { document.getElementById("menu").style.left = "-320px"; }
+    function toggleConfig() { document.getElementById("configBox").classList.toggle("hidden"); }
+
+    // ========== MODAL ==========
+    function abrirModal() { document.getElementById("modal").classList.remove("hidden"); }
+    function fecharModal() { document.getElementById("modal").classList.add("hidden"); }
+
+    // ========== LOCAL STORAGE ==========
+    function pegarProdutos() { return JSON.parse(localStorage.getItem("produtos")) || []; }
+    function salvarProdutos(produtos) { localStorage.setItem("produtos", JSON.stringify(produtos)); }
+
+    // ========== PESQUISA ==========
+    function filtrarPorTexto() {
+        let termo = document.getElementById("searchInput").value.toLowerCase();
+        let produtosDiv = document.getElementById("produtos");
+        let cards = produtosDiv.querySelectorAll(".produto-card");
+        
+        cards.forEach(card => {
+            let nome = card.getAttribute("data-nome") || "";
+            let desc = card.getAttribute("data-desc") || "";
+            if (nome.includes(termo) || desc.includes(termo)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
             }
-
-          };
-
-          actions.appendChild(btnAdd);
-          actions.appendChild(btnDelete);
-
-          li.appendChild(span);
-          li.appendChild(actions);
-
-          lista.appendChild(li);
-
         });
-
-      } catch (erro) {
-
-        console.log("Erro:", erro);
-      }
-
     }
 
-    // ADICIONAR CATEGORIA
+    // ========== FILTRAR POR CATEGORIA ==========
+    function filtrar(categoria) {
+        let produtosDiv = document.getElementById("produtos");
+        let cards = produtosDiv.querySelectorAll(".produto-card");
+        
+        cards.forEach(card => {
+            if (categoria === "todos") {
+                card.style.display = "block";
+            } else {
+                let cardCategoria = card.getAttribute("data-categoria");
+                if (cardCategoria === categoria) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            }
+        });
+        fecharMenu();
+    }
+
+    // ========== ABRIR PÁGINA DO PRODUTO ==========
+    function abrirProduto(nome, categoria, imagem, preco, descricao) {
+        localStorage.setItem("produtoNome", nome);
+        localStorage.setItem("produtoCategoria", categoria);
+        localStorage.setItem("produtoImagem", imagem);
+        localStorage.setItem("produtoPreco", preco);
+        localStorage.setItem("produtoDescricao", descricao);
+        window.location.href = "produto.html";
+    }
+
+    // ========== DELETAR PRODUTO ==========
+    function deletarProduto(index) {
+        if (!confirm("Tem certeza que deseja excluir este produto?")) return;
+        let produtos = pegarProdutos();
+        produtos.splice(index, 1);
+        salvarProdutos(produtos);
+        renderizarProdutos();
+    }
+
+    // ========== CRIAR CARD ==========
+    function criarCard(produto, index) {
+        let produtosDiv = document.getElementById("produtos");
+        let card = document.createElement("div");
+        card.className = `produto-card ${produto.categoria} bg-white rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition relative`;
+        card.setAttribute("data-categoria", produto.categoria);
+        card.setAttribute("data-nome", produto.nome.toLowerCase());
+        card.setAttribute("data-desc", produto.descricao.toLowerCase());
+        
+        card.innerHTML = `
+            <button onclick="deletarProduto(${index})" class="absolute top-3 right-3 bg-red-500 hover:bg-red-600 text-white w-9 h-9 rounded-full shadow-lg z-10 transition">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+            <img src="${produto.imagem}" class="w-full h-[220px] object-cover" alt="${produto.nome}">
+            <div class="p-5">
+                <h3 class="font-bold text-xl mb-1">${produto.nome}</h3>
+                <p class="text-gray-500 text-sm mb-3">${produto.categoria.replace(/-/g, " ")}</p>
+                <p class="text-pink-600 font-bold text-2xl mb-3">R$ ${Number(produto.preco).toFixed(2)}</p>
+                <p class="text-gray-600 text-sm mb-5 line-clamp-2">${produto.descricao.substring(0, 80)}${produto.descricao.length > 80 ? '...' : ''}</p>
+                <button onclick='abrirProduto("${produto.nome.replace(/\\/g, '\\\\').replace(/"/g, '&quot;')}", "${produto.categoria}", "${produto.imagem}", "${produto.preco}", "${produto.descricao.replace(/\\/g, '\\\\').replace(/"/g, '&quot;')}")' class="w-full bg-pink-400 hover:bg-pink-500 text-white py-3 rounded-2xl transition flex items-center justify-center gap-2">
+                    <i class="fas fa-shopping-cart"></i> Comprar
+                </button>
+            </div>
+        `;
+        produtosDiv.appendChild(card);
+    }
+
+    // ========== RENDERIZAR PRODUTOS ==========
+    function renderizarProdutos() {
+        let produtosDiv = document.getElementById("produtos");
+        produtosDiv.innerHTML = `
+            <div onclick="abrirModal()" class="bg-white border-2 border-dashed border-pink-300 rounded-3xl min-h-[380px] flex flex-col items-center justify-center cursor-pointer hover:scale-105 hover:border-pink-500 transition shadow-md group">
+                <div class="text-7xl text-pink-400 group-hover:text-pink-500 transition">+</div>
+                <p class="mt-4 text-pink-500 font-semibold text-lg">Adicionar Produto</p>
+            </div>
+        `;
+        
+        let produtos = pegarProdutos();
+        produtos.forEach((produto, index) => { criarCard(produto, index); });
+    }
+
+    // ========== SALVAR PRODUTO ==========
+    function salvarProduto() {
+        let nome = document.getElementById("nomeProduto").value.trim();
+        let categoria = document.getElementById("categoriaProduto").value;
+        let foto = document.getElementById("fotoProduto").files[0];
+        let preco = document.getElementById("precoProduto").value;
+        let descricao = document.getElementById("descricaoProduto").value.trim();
+        
+        if (!nome || !categoria || !foto || !preco || !descricao) {
+            alert("Preencha todos os campos!");
+            return;
+        }
+        
+        let leitor = new FileReader();
+        leitor.onload = function(e) {
+            let produto = {
+                nome: nome,
+                categoria: categoria,
+                imagem: e.target.result,
+                preco: Number(preco),
+                descricao: descricao
+            };
+            let produtos = pegarProdutos();
+            produtos.push(produto);
+            salvarProdutos(produtos);
+            renderizarProdutos();
+            
+            // Limpar campos
+            document.getElementById("nomeProduto").value = "";
+            document.getElementById("categoriaProduto").value = "";
+            document.getElementById("fotoProduto").value = "";
+            document.getElementById("precoProduto").value = "";
+            document.getElementById("descricaoProduto").value = "";
+            fecharModal();
+        };
+        leitor.readAsDataURL(foto);
+    }
+
+    // ========== CATEGORIAS (API) ==========
+    let categoriasGlobais = [];
+    
+    async function carregarCategorias() {
+        try {
+            let res = await fetch("http://localhost:8080/categoria");
+            let dados = await res.json();
+            categoriasGlobais = dados;
+            
+            let lista = document.getElementById("listaCategorias");
+            let header = document.getElementById("categoriasHeader");
+            let select = document.getElementById("categoriaProduto");
+            
+            lista.innerHTML = "";
+            header.innerHTML = "";
+            select.innerHTML = `<option value="">Escolha uma categoria</option>`;
+            
+            // Botão "Todos" no header
+            let btnTodos = document.createElement("button");
+            btnTodos.innerText = "Todos";
+            btnTodos.className = "bg-white hover:bg-pink-400 hover:text-white px-5 py-2 rounded-full shadow transition whitespace-nowrap";
+            btnTodos.onclick = () => { filtrar("todos"); fecharMenu(); };
+            header.appendChild(btnTodos);
+            
+            // Item "Todos" no menu lateral
+            let liTodos = document.createElement("li");
+            liTodos.className = "bg-white px-4 py-3 rounded-2xl shadow cursor-pointer hover:text-pink-500 transition font-medium";
+            liTodos.innerText = "Todos";
+            liTodos.onclick = () => { filtrar("todos"); fecharMenu(); };
+            lista.appendChild(liTodos);
+            
+            // Para cada categoria
+            dados.forEach(cat => {
+                let nomeClasse = cat.nome.toLowerCase().trim().replace(/\s+/g, "-");
+                
+                // Option do select
+                let option = document.createElement("option");
+                option.value = nomeClasse;
+                option.innerText = cat.nome;
+                select.appendChild(option);
+                
+                // Botão no header
+                let btnHeader = document.createElement("button");
+                btnHeader.innerText = cat.nome;
+                btnHeader.className = "bg-white hover:bg-pink-400 hover:text-white px-5 py-2 rounded-full shadow transition whitespace-nowrap";
+                btnHeader.onclick = () => { filtrar(nomeClasse); };
+                header.appendChild(btnHeader);
+                
+                // Item no menu lateral
+                let li = document.createElement("li");
+                li.className = "flex items-center justify-between bg-white px-4 py-3 rounded-2xl shadow hover:shadow-lg transition";
+                
+                let span = document.createElement("span");
+                span.innerText = cat.nome;
+                span.className = "cursor-pointer font-medium hover:text-pink-500 transition";
+                span.onclick = () => { filtrar(nomeClasse); fecharMenu(); };
+                
+                let actions = document.createElement("div");
+                actions.className = "flex items-center gap-2";
+                
+                let btnAdd = document.createElement("button");
+                btnAdd.innerHTML = '<i class="fas fa-plus"></i>';
+                btnAdd.className = "bg-green-400 hover:bg-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center text-sm transition";
+                btnAdd.onclick = (e) => {
+                    e.stopPropagation();
+                    abrirModal();
+                    fecharMenu();
+                    document.getElementById("categoriaProduto").value = nomeClasse;
+                };
+                
+                let btnDelete = document.createElement("button");
+                btnDelete.innerHTML = '<i class="fas fa-trash-alt text-gray-500 hover:text-red-500"></i>';
+                btnDelete.className = "hover:scale-110 transition";
+                btnDelete.onclick = async (e) => {
+                    e.stopPropagation();
+                    if (confirm(`Excluir categoria "${cat.nome}"?`)) {
+                        try {
+                            await fetch(`http://localhost:8080/categoria/${cat.id}`, { method: "DELETE" });
+                            carregarCategorias();
+                        } catch (erro) { console.log("Erro:", erro); }
+                    }
+                };
+                
+                actions.appendChild(btnAdd);
+                actions.appendChild(btnDelete);
+                li.appendChild(span);
+                li.appendChild(actions);
+                lista.appendChild(li);
+            });
+        } catch (erro) {
+            console.log("Erro ao carregar categorias:", erro);
+            // Fallback: categorias padrão
+            let lista = document.getElementById("listaCategorias");
+            let header = document.getElementById("categoriasHeader");
+            lista.innerHTML = '<li class="text-gray-500 text-center py-4">Erro ao carregar categorias</li>';
+            header.innerHTML = '<button onclick="filtrar(\'todos\')" class="bg-white hover:bg-pink-400 hover:text-white px-5 py-2 rounded-full shadow transition">Todos</button>';
+        }
+    }
+    
+    // ========== ADICIONAR CATEGORIA ==========
     async function adicionarCategoria() {
-
-      let input = document.getElementById("novaCategoria");
-
-      let nome = input.value.trim();
-
-      if (!nome) return;
-
-      try {
-
-        await fetch("http://localhost:8080/categoria", {
-
-          method: "POST",
-
-          headers: {
-            "Content-Type": "application/json"
-          },
-
-          body: JSON.stringify({
-            nome: nome
-          })
-
-        });
-
-        input.value = "";
-
-        carregarCategorias();
-
-      } catch (erro) {
-
-        console.log("Erro:", erro);
-      }
-
+        let input = document.getElementById("novaCategoria");
+        let nome = input.value.trim();
+        if (!nome) return;
+        try {
+            await fetch("http://localhost:8080/categoria", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ nome: nome })
+            });
+            input.value = "";
+            carregarCategorias();
+        } catch (erro) {
+            console.log("Erro:", erro);
+            alert("Erro ao adicionar categoria. Verifique se o servidor está rodando.");
+        }
     }
-
+    
+    // ========== PESQUISA COM DEBOUNCE ==========
+    let searchTimeout;
+    document.getElementById("searchInput").addEventListener("input", function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => { filtrarPorTexto(); }, 300);
+    });
+    
+    // ========== INICIALIZAÇÃO ==========
     carregarCategorias();
-
     renderizarProdutos();
+</script>
 
-  </script>
+<style>
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #fce7f3;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #f9a8d4;
+        border-radius: 10px;
+    }
+</style>
 
 </body>
-
 </html>

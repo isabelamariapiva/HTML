@@ -3,175 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petshop Reino Animal</title>
+    <title>Bem-estar e Cuidados | Petshop Reino Animal</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Transições suaves e delicadas */
+        * {
+            -webkit-font-smoothing: antialiased;
+        }
+        .card-bemestar {
+            transition: all 0.3s ease;
+        }
+        .card-bemestar:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(244, 184, 215, 0.4);
+        }
+        .thumb-bemestar {
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        .thumb-bemestar:hover {
+            transform: scale(1.06);
+            border-color: #f9a8d4;
+            box-shadow: 0 6px 14px rgba(249, 168, 212, 0.3);
+        }
+        .btn-rosa {
+            background: linear-gradient(135deg, #f9a8d4 0%, #f472b6 100%);
+            transition: all 0.2s ease;
+        }
+        .btn-rosa:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 18px rgba(244, 114, 182, 0.35);
+        }
+        .btn-outline-rosa {
+            transition: all 0.2s ease;
+        }
+        .btn-outline-rosa:hover {
+            background-color: #fce7f3;
+            transform: scale(1.02);
+        }
+        .rating-star {
+            color: #fbbf24;
+            letter-spacing: 2px;
+        }
+        .linha-rosa {
+            background: linear-gradient(90deg, #fbcfe8, #f9a8d4, #fbcfe8);
+            height: 3px;
+            width: 60px;
+            border-radius: 4px;
+        }
+        .beneficio-bemestar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #fce7f3;
+        }
+        .beneficio-bemestar:last-child {
+            border-bottom: none;
+        }
+        .bg-rosa-claro {
+            background: linear-gradient(145deg, #fff5f9 0%, #fef2f6 100%);
+        }
+        .texto-rosa-gradiente {
+            background: linear-gradient(135deg, #ec489a, #be185d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .selo-bemestar {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            border-left: 3px solid #f9a8d4;
+        }
+    </style>
 </head>
-
 <body class="bg-[#ECEDD1] text-gray-800 font-sans min-h-screen flex flex-col">
 
-<header class="bg-[#F4B8D7] px-[30px] py-[7px] flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50">
-
-    <!-- LOGO -->
-    <div>
-        <img src="imgs/logo.png"
-            class="w-[70px] rounded-full cursor-pointer">
-    </div>
-
-    <!-- MENU -->
-    <nav class="space-x-6 font-semibold hidden md:block">
-
-        <a href="index.html"
-            class="hover:text-pink-600 transition">
-            Home
-        </a>
-
-        <a href="index.html#servicos"
-            class="hover:text-pink-600 transition">
-            Serviços
-        </a>
-
-        <a href="agendamento.html"
-            class="hover:text-pink-600 transition">
-            Agendamentos
-        </a>
-
-    </nav>
-
-    <!-- DIREITA -->
-    <div class="flex items-center gap-4">
-
-        <!-- PESQUISA -->
-        <div class="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
-
-            <input type="text"
-                placeholder="Pesquisar..."
-                class="outline-none text-sm px-2 w-[120px] md:w-[180px]">
-
-            <svg xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 text-gray-600 cursor-pointer hover:text-pink-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-
-                <path stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
-
-            </svg>
-
+    <!-- CABEÇALHO IGUALZINHO AO DA PÁGINA PRINCIPAL (rosa, mesma estrutura) -->
+    <header class="bg-[#F4B8D7] px-[30px] py-[7px] flex justify-between items-center border-b-[5px] border-[#fa8bc2] sticky top-0 z-50">
+        <!-- LOGO -->
+        <div>
+            <img src="imgs/logo.png" class="w-[70px] rounded-full cursor-pointer">
         </div>
 
-        <!-- CARRINHO -->
-        <a href="compra.html"
-            class="bg-white p-3 rounded-full shadow-md hover:bg-pink-100 transition relative">
+        <!-- MENU -->
+        <nav class="space-x-6 font-semibold hidden md:block">
+            <a href="index.html" class="hover:text-pink-600 transition">Home</a>
+            <a href="index.html#servicos" class="hover:text-pink-600 transition">Serviços</a>
+            <a href="agendamento.html" class="hover:text-pink-600 transition">Agendamentos</a>
+        </nav>
 
-            <svg xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6 text-pink-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-
-                <path stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.293 1.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-
-            </svg>
-
-            <!-- BOLINHA -->
-            <span class="absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">
-                0
-            </span>
-
-        </a>
-
-    </div>
-
-</header>
-
-
-
-<main class="flex justify-center items-center px-4 py-10 flex-grow">
-
-    <div class="bg-white shadow-xl rounded-2xl max-w-5xl w-full p-8 flex flex-col md:flex-row gap-10">
-
-     
-        <div class="flex flex-col items-center">
-            <img id="imagemPrincipal" src="imgs/estetica.png" 
-            class="w-[320px] rounded-xl shadow-lg hover:scale-105 transition">
-
-            <div class="flex gap-3 mt-5">
-                <img src="imgs/bem estar1.webp" onclick="trocarImagem(this.src)"
-                class="w-16 rounded-lg cursor-pointer hover:scale-110 transition">
-
-                <img src="imgs/bem estar2.webp" onclick="trocarImagem(this.src)"
-                class="w-16 rounded-lg cursor-pointer hover:scale-110 transition">
-
-                <img src="imgs/bem estar3.png" onclick="trocarImagem(this.src)"
-                class="w-16 rounded-lg cursor-pointer hover:scale-110 transition">
+        <!-- DIREITA -->
+        <div class="flex items-center gap-4">
+            <!-- PESQUISA -->
+            <div class="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
+                <input type="text" placeholder="Pesquisar..." class="outline-none text-sm px-2 w-[120px] md:w-[180px]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600 cursor-pointer hover:text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
             </div>
+
+            <!-- CARRINHO -->
+            <a href="compra.html" class="bg-white p-3 rounded-full shadow-md hover:bg-pink-100 transition relative">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.293 1.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span class="absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">0</span>
+            </a>
+
+            <!-- PERFIL -->
+            <a href="login.html" class="bg-white p-1 rounded-full shadow-md hover:bg-pink-100 hover:scale-110 transition">
+                <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Perfil" class="w-9 h-9 rounded-full">
+            </a>
         </div>
+    </header>
 
-     
-        <div class="flex flex-col justify-between flex-1">
+    <!-- MAIN: PÁGINA DE BEM-ESTAR E CUIDADOS -->
+    <main class="flex justify-center items-center px-4 py-10 md:py-14 flex-grow">
+        <div class="max-w-6xl w-full">
+            <!-- Breadcrumb delicado -->
+            <div class="mb-5 text-sm text-gray-500 flex items-center gap-2 flex-wrap">
+                <a href="index.html" class="hover:text-pink-500 transition"><i class="fas fa-home"></i> Início</a>
+                <i class="fas fa-chevron-right text-pink-300 text-xs"></i>
+                <a href="index.html#servicos" class="hover:text-pink-500 transition">Serviços</a>
+                <i class="fas fa-chevron-right text-pink-300 text-xs"></i>
+                <span class="text-pink-600 font-medium">Bem-estar e Cuidados</span>
+            </div>
 
-            <div>
-                <h2 class="text-3xl font-bold mb-3">Bem-estar e Cuidados</h2>
+            <!-- CARD PRINCIPAL -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-pink-100 card-bemestar">
+                <div class="flex flex-col lg:flex-row">
+                    <!-- LADO ESQUERDO: GALERIA -->
+                    <div class="lg:w-1/2 p-6 md:p-8 bg-rosa-claro flex flex-col items-center">
+                        <div class="relative group overflow-hidden rounded-2xl shadow-md bg-white p-3">
+                            <img id="imagemPrincipal" src="imgs/bem estar.png" 
+                                class="w-full max-w-[340px] h-auto mx-auto rounded-lg transition-transform duration-500 group-hover:scale-105"
+                                alt="Bem-estar e Cuidados">
+                        </div>
+                        <div class="flex gap-3 mt-6 justify-center flex-wrap">
+                            <img src="imgs/bem estar1.webp" onclick="trocarImagem(this.src)" 
+                                class="w-16 h-16 rounded-xl cursor-pointer shadow-md thumb-bemestar object-cover bg-white border border-pink-100">
+                            <img src="imgs/bem estar2.webp" onclick="trocarImagem(this.src)" 
+                                class="w-16 h-16 rounded-xl cursor-pointer shadow-md thumb-bemestar object-cover bg-white border border-pink-100">
+                            <img src="imgs/bem estar3.png" onclick="trocarImagem(this.src)" 
+                                class="w-16 h-16 rounded-xl cursor-pointer shadow-md thumb-bemestar object-cover bg-white border border-pink-100">
+                        </div>
+                        <!-- selo de carinho -->
+                        <div class="mt-5 flex gap-4 text-xs text-pink-500">
+                            <span class="flex items-center gap-1"><i class="fas fa-heart"></i> Atendimento humanizado</span>
+                            <span class="flex items-center gap-1"><i class="fas fa-smile-beam text-pink-400"></i> Pet sempre feliz</span>
+                        </div>
+                    </div>
 
-                <div class="flex items-center gap-2 text-yellow-400 mb-4 text-lg">
-                    ⭐⭐⭐⭐⭐
-                    <span class="text-gray-500 text-sm">(4.9)</span>
+                    <!-- LADO DIREITO: INFORMAÇÕES -->
+                    <div class="lg:w-1/2 p-6 md:p-8 flex flex-col justify-between bg-white">
+                        <div>
+                            <!-- etiquetas -->
+                            <div class="flex items-center gap-2 mb-3 flex-wrap">
+                                <span class="bg-pink-100 text-pink-600 text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-paw"></i> Bem-estar animal</span>
+                                <span class="bg-green-100 text-green-600 text-xs px-3 py-1 rounded-full"><i class="fas fa-leaf"></i> Cuidados naturais</span>
+                                <span class="bg-amber-50 text-amber-600 text-xs px-3 py-1 rounded-full"><i class="fas fa-medal"></i> Premium</span>
+                            </div>
+                            <h1 class="text-3xl md:text-4xl font-bold mb-2 flex items-center gap-2">
+                                Bem-estar e <span class="texto-rosa-gradiente">Cuidados</span>
+                                <i class="fas fa-spa text-pink-400 text-3xl"></i>
+                            </h1>
+                            
+                            <!-- avaliação -->
+                            <div class="flex items-center gap-3 mb-5 flex-wrap">
+                                <div class="flex items-center rating-star text-lg">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="text-gray-700 font-medium">4.9</span>
+                                <span class="text-gray-400 text-sm">(187 avaliações)</span>
+                                <div class="linha-rosa hidden md:block"></div>
+                            </div>
+
+                            <!-- descrição completa e delicada -->
+                            <div class="bg-pink-50/50 p-5 rounded-xl mb-6 border-l-4 border-pink-300">
+                                <p class="text-gray-700 leading-relaxed">
+                                    <i class="fas fa-heart text-pink-400 mr-1"></i> 
+                                    Pensando no conforto e felicidade do seu pet, oferecemos serviços especiais de cuidado e relaxamento. 
+                                    Inclui hidratação de pelos, escovação prolongada, cuidados para pets idosos ou sensíveis, além de 
+                                    atenção individualizada. Nosso objetivo é reduzir o estresse e aumentar o bem-estar do seu companheiro.
+                                </p>
+                            </div>
+
+                            <!-- lista de serviços -->
+                            <div class="space-y-1">
+                                <h3 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-check-circle text-pink-500"></i> Nossos serviços de bem-estar:</h3>
+                                <div class="grid grid-cols-1 gap-0">
+                                    <div class="beneficio-bemestar"><i class="fas fa-child w-5 text-pink-400"></i> <span><strong>Creche (Daycare):</strong> Socialização, brincadeiras e atividades para evitar ansiedade</span></div>
+                                    <div class="beneficio-bemestar"><i class="fas fa-hotel w-5 text-pink-400"></i> <span><strong>Hospedagem:</strong> Hotel confortável e seguro para seu pet durante viagens</span></div>
+                                    <div class="beneficio-bemestar"><i class="fas fa-walking w-5 text-pink-400"></i> <span><strong>Dog Walker / Adestramento:</strong> Passeios diários e treinamento comportamental positivo</span></div>
+                                    <div class="beneficio-bemestar"><i class="fas fa-hand-sparkles w-5 text-pink-400"></i> <span><strong>Terapias relaxantes:</strong> Massagem e aromaterapia para pets estressados</span></div>
+                                    <div class="beneficio-bemestar"><i class="fas fa-heartbeat w-5 text-pink-400"></i> <span><strong>Cuidados para pets idosos:</strong> Atenção especial e conforto para a melhor idade</span></div>
+                                </div>
+                            </div>
+
+                            <!-- diferencial fofo -->
+                            <div class="mt-5 selo-bemestar rounded-xl p-3 text-sm flex items-center gap-3">
+                                <i class="fas fa-ribbon text-pink-500 text-xl"></i>
+                                <span class="text-gray-700">Ambiente acolhedor, profissionais treinados em bem-estar animal e muito amor envolvido. Seu pet merece relaxar! 💕</span>
+                            </div>
+                        </div>
+
+                        <!-- PREÇO E AÇÕES -->
+                        <div class="mt-7 pt-5 border-t border-pink-100">
+                            <div class="flex items-baseline gap-3 flex-wrap mb-4">
+                                <span class="text-4xl font-extrabold text-pink-600">R$ 139,90</span>
+                                <span class="text-gray-400 line-through text-sm">R$ 189,90</span>
+                                <span class="bg-pink-100 text-pink-600 text-xs font-bold px-2 py-1 rounded-full">❤️ Pacote bem-estar</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3 mb-4">
+                                <a href="agendamento.html" 
+                                    class="flex-1 btn-rosa text-white text-center py-3 rounded-xl font-semibold transition shadow-md flex items-center justify-center gap-2">
+                                    <i class="fas fa-calendar-heart"></i> Agendar horário
+                                </a>
+                                <a href="index.html" 
+                                    class="flex-1 bg-pink-50 text-pink-600 text-center py-3 rounded-xl font-medium hover:bg-pink-100 transition btn-outline-rosa flex items-center justify-center gap-2 border border-pink-200">
+                                    <i class="fas fa-arrow-left"></i> Voltar
+                                </a>
+                            </div>
+                            <!-- formas de pagamento e informações -->
+                            <div class="flex flex-wrap gap-3 text-xs text-gray-500 justify-between items-center">
+                                <span class="flex items-center gap-1"><i class="far fa-credit-card text-pink-400"></i> 3x sem juros</span>
+                                <span class="flex items-center gap-1"><i class="fab fa-pix text-pink-400"></i> Pix com 5% off</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-gift text-pink-400"></i> 1ª semana com desconto</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-3 flex items-center gap-1">
+                                <i class="fas fa-info-circle text-pink-400"></i> 
+                                Consulte valores para pacotes mensais de creche e hospedagem
+                            </p>
+                        </div>
+                    </div>
                 </div>
-
-                <p class="text-gray-600 text-sm leading-relaxed mb-5">
-                    Pensando no conforto e felicidade do seu pet, oferecemos serviços especiais de cuidado e relaxamento. 
-                    Inclui hidratação de pelos, escovação prolongada, cuidados para pets idosos ou sensíveis, além de 
-                    atenção individualizada. Nosso objetivo é reduzir o estresse e aumentar o bem-estar do seu companheiro.
-                </p>
-
-                <ul class="text-gray-700 text-sm space-y-2 list-disc pl-5">
-                    <li><strong>Creche (Daycare):</strong> Socialização e atividades para evitar ansiedade.</li>
-                    <li><strong>Hospedagem:</strong> Hotel confortável para seu pet durante viagens.</li>
-                    <li><strong>Dog Walker / Adestramento:</strong> Passeios e treinamento comportamental.</li>
-                </ul>
             </div>
 
-           
-            <div class="mt-8">
-                <p class="text-3xl font-bold text-pink-500 mb-5">
-                    R$ 139,90
-                </p>
-
-                <div class="flex gap-4">
-                
-                       <a href="agendamento.html" 
-                    class="bg-pink-200 text-pink-700 px-6 py-2 rounded-lg hover:bg-pink-300 transition">
-                        agendar
-                    </a>
-
-                    <a href="index.html" 
-                    class="bg-pink-200 text-pink-700 px-6 py-2 rounded-lg hover:bg-pink-300 transition">
-                        Voltar
-                    </a>
+            <!-- SEÇÃO DE DEPOIMENTOS DE CLIENTES -->
+            <div class="mt-10 grid md:grid-cols-2 gap-5">
+                <div class="bg-white/80 rounded-xl p-5 shadow-sm border border-pink-100">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-600"><i class="fas fa-dog"></i></div>
+                        <div><p class="font-semibold text-sm">Patrícia e o Bob</p><div class="flex text-yellow-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic">"Meu Bob ama a creche! Chega em casa cansado e feliz. Os cuidadores são超級 amorosos, recomendo demais!"</p>
+                </div>
+                <div class="bg-white/80 rounded-xl p-5 shadow-sm border border-pink-100">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center text-pink-600"><i class="fas fa-cat"></i></div>
+                        <div><p class="font-semibold text-sm">Ricardo & Mia</p><div class="flex text-yellow-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic">"Deixei minha gata na hospedagem por 5 dias e ela voltou super tranquila. Ambiente limpo e equipe atenciosa!"</p>
                 </div>
             </div>
 
+            <!-- INFO EXTRA: diferenciais com ícones fofos -->
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
+                <div class="bg-white/60 rounded-xl p-3 border border-pink-100 hover:bg-pink-50 transition">
+                    <i class="fas fa-dog text-pink-500 text-2xl mb-1 block"></i>
+                    <span class="text-xs text-gray-600 font-medium">Socialização</span>
+                    <span class="text-[10px] text-gray-400 block">com outros pets</span>
+                </div>
+                <div class="bg-white/60 rounded-xl p-3 border border-pink-100 hover:bg-pink-50 transition">
+                    <i class="fas fa-bed text-pink-500 text-2xl mb-1 block"></i>
+                    <span class="text-xs text-gray-600 font-medium">Hospedagem VIP</span>
+                    <span class="text-[10px] text-gray-400 block">suítes individuais</span>
+                </div>
+                <div class="bg-white/60 rounded-xl p-3 border border-pink-100 hover:bg-pink-50 transition">
+                    <i class="fas fa-brain text-pink-500 text-2xl mb-1 block"></i>
+                    <span class="text-xs text-gray-600 font-medium">Adestramento</span>
+                    <span class="text-[10px] text-gray-400 block">método positivo</span>
+                </div>
+                <div class="bg-white/60 rounded-xl p-3 border border-pink-100 hover:bg-pink-50 transition">
+                    <i class="fas fa-massage text-pink-500 text-2xl mb-1 block"></i>
+                    <span class="text-xs text-gray-600 font-medium">Massagem relaxante</span>
+                    <span class="text-[10px] text-gray-400 block">anti-estresse</span>
+                </div>
+            </div>
+            
+            <!-- selo extra de confiança -->
+            <div class="mt-5 flex justify-center">
+                <div class="bg-gradient-to-r from-pink-100 to-pink-50 rounded-full px-5 py-2 inline-flex items-center gap-2 shadow-sm">
+                    <i class="fas fa-crown text-pink-500 text-sm"></i>
+                    <span class="text-xs text-pink-700 font-semibold">Ambiente preparado com amor e segurança para seu pet</span>
+                    <i class="fas fa-check-circle text-pink-500 text-sm"></i>
+                </div>
+            </div>
         </div>
+    </main>
 
-    </div>
+    <!-- RODAPÉ IGUAL AO DA PÁGINA PRINCIPAL -->
+    <footer class="bg-[#F4B8D7] text-center py-6 border-t-[5px] border-pink-400 mt-auto">
+        <p class="text-sm">© 2026 Petshop Reino Animal • Todos os direitos reservados</p>
+    </footer>
 
-</main>
+    <script>
+        // Função para trocar imagem principal com suavidade
+        function trocarImagem(novaImagem) {
+            const imgPrincipal = document.getElementById("imagemPrincipal");
+            if (imgPrincipal) {
+                imgPrincipal.style.opacity = '0.5';
+                setTimeout(() => {
+                    imgPrincipal.src = novaImagem;
+                    imgPrincipal.onload = () => {
+                        imgPrincipal.style.opacity = '1';
+                    };
+                    if (imgPrincipal.complete) imgPrincipal.style.opacity = '1';
+                }, 150);
+            }
+        }
 
-<footer class="bg-[#F4B8D7] text-center py-6 border-t-[5px] border-pink-400 mt-auto">
-    <p class="text-sm">© 2026 Petshop Reino Animal • Todos os direitos reservados</p>
-</footer>
-
-<script>
-function trocarImagem(novaImagem) {
-    document.getElementById("imagemPrincipal").src = novaImagem;
-}
-</script>
-
+        // Carrinho persistente (apenas visual)
+        document.addEventListener('DOMContentLoaded', () => {
+            const badge = document.querySelector('.absolute.-top-1.-right-1');
+            if(badge) {
+                let saved = localStorage.getItem('reino_cart_count');
+                if(saved && !isNaN(parseInt(saved))) {
+                    badge.innerText = parseInt(saved);
+                } else {
+                    badge.innerText = '0';
+                }
+            }
+        });
+    </script>
 </body>
 </html>
